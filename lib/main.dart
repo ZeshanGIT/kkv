@@ -1,17 +1,16 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:kkv/screens/get_started/get_started.dart';
-import 'package:kkv/screens/teacher_or_student/teacher_or_student.bindings.dart';
-import 'package:kkv/screens/teacher_or_student/teacher_or_student.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:kkv/screens/teacher_signup/teacher_signup.dart';
-import 'package:kkv/screens/teacher_signup/teacher_signup_binging.dart';
+import 'package:kkv/screens/home/home.dart';
 
 import 'router/routes.dart';
+import 'screens/get_started/get_started.dart';
+import 'screens/teacher_or_student/teacher_or_student.bindings.dart';
+import 'screens/teacher_or_student/teacher_or_student.dart';
+import 'screens/teacher_signup/teacher_signup.dart';
+import 'screens/teacher_signup/teacher_signup_binging.dart';
 
 main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -53,6 +52,10 @@ class MyApp extends StatelessWidget {
           name: Routes.TEACHER_SIGNUP,
           page: () => TeacherSignup(),
           binding: TeacherSignupBinding(),
+        ),
+        GetPage(
+          name: Routes.HOME,
+          page: () => HomePage(),
         ),
       ],
       debugShowCheckedModeBanner: false,

@@ -1,16 +1,18 @@
 import 'package:get/get.dart';
-import 'package:kkv/router/routes.dart';
+import 'package:kkv/services/teacher_user_service.dart';
+
+import '../../model/user.model.dart';
 
 class TeacherSigupController extends GetxController {
   String? empId;
+  UserModel _userModel = Get.arguments;
 
   onEmpIdChange(String empId) {
-    print("updating $empId");
     this.empId = empId;
     update();
   }
 
-  onGetIn() {
-    Get.toNamed(Routes.HOME);
+  onGetIn() async {
+    TeacherUserService.addTeacher(_userModel, empId);
   }
 }

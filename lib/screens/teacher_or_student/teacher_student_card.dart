@@ -1,8 +1,6 @@
-import 'package:after_layout/after_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:kkv/router/routes.dart';
 import 'package:liquid_progress_indicator/liquid_progress_indicator.dart';
 import 'package:simple_animations/simple_animations.dart';
 import 'package:supercharged/supercharged.dart';
@@ -17,6 +15,7 @@ class TeacherStudentCard extends StatefulWidget {
   final Color onSelectColor;
   final String img;
   final String goTo;
+  final String role;
 
   TeacherStudentCard({
     Key? key,
@@ -26,6 +25,7 @@ class TeacherStudentCard extends StatefulWidget {
     required this.img,
     required this.goTo,
     required this.onSelectColor,
+    required this.role,
   }) : super(key: key);
 
   @override
@@ -56,14 +56,14 @@ class _TeacherStudentCardState extends State<TeacherStudentCard>
         // Color _color = lerpedColor(
         //   _animation.value.get(AnimProps.textColor),
         // );
-        if (widget.goTo == teacherOrStudentController.selectedRole) {
+        if (widget.role == teacherOrStudentController.selectedRole) {
           controller.play();
         } else {
           controller.playReverse();
         }
         return GestureDetector(
           onTap: () {
-            teacherOrStudentController.setSelectedRole(widget.goTo);
+            teacherOrStudentController.setSelectedRole(widget.role);
           },
           child: Stack(
             children: [

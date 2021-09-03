@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:kkv/assets/teacher_or_student.dart';
-import 'package:kkv/common/constants.dart';
-import 'package:kkv/common/widgets/bottom_width_button.dart';
-import 'package:kkv/common/widgets/top_bar.dart';
-import 'package:kkv/model/teacher.model.dart';
-import 'package:kkv/model/user.model.dart';
-import 'package:kkv/screens/teacher_signup/teacher_signup_controller.dart';
+
+import '../../assets/teacher_or_student.dart';
+import '../../common/constants.dart';
+import '../../common/widgets/bottom_width_button.dart';
+import '../../common/widgets/top_bar.dart';
+import '../../model/user.model.dart';
+import 'teacher_signup_controller.dart';
 
 class TeacherSignup extends StatelessWidget {
   TeacherSignup({Key? key}) : super(key: key);
 
-  UserModel? _userModel;
+  final UserModel? _userModel = Get.arguments as UserModel;
 
   @override
   Widget build(BuildContext context) {
-    _userModel = Get.arguments as UserModel;
     return Scaffold(
       body: GetBuilder<TeacherSigupController>(
           builder: (teacherSignUpController) {

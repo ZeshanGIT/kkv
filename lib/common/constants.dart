@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+// ignore: non_constant_identifier_names
 final BORDER_RADIUS_MEDIUM = BorderRadius.circular(8);
+// ignore: non_constant_identifier_names
 final BORDER_RADIUS_LARGE = BorderRadius.circular(30);
 
 const SIZED_BOX_MAX_WIDTH = const SizedBox(width: double.maxFinite);
@@ -34,4 +36,9 @@ class StoredDetails {
   static const EMAIL_ADDRESS = "email";
   static const DISPLAY_PICTURE = "dp";
   static const USER_ID = "uid";
+}
+
+class UserRole {
+  static const STUDENT = "student";
+  static const TEACHER = "teacher";
 }
