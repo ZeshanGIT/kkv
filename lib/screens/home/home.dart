@@ -1,19 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:get_storage/get_storage.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:kkv/assets/home.dart';
+import 'package:kkv/common/widgets/top_bar.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
-
-  final GetStorage _box = GetStorage();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
       body: Center(
         child: Column(
           children: [
-            Text("Role ${_box.read('role')}"),
-            Text(_box.read('user').toString()),
+            TopBar(
+              leftIconButton: IconButton(
+                onPressed: () {},
+                icon: SvgPicture.asset(HomeAssets.MenuIcon),
+              ),
+              rightIconButton: IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.notifications_none_rounded),
+              ),
+            ),
           ],
         ),
       ),

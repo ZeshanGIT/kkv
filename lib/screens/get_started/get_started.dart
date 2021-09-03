@@ -8,8 +8,8 @@ import '../../common/text_styles.dart';
 import '../../common/widgets/bottom_width_button.dart';
 import '../../router/routes.dart';
 
-class GetStarted extends StatelessWidget {
-  GetStarted({Key? key}) : super(key: key);
+class GetStartedPage extends StatelessWidget {
+  GetStartedPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

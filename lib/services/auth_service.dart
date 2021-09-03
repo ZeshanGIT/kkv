@@ -26,6 +26,15 @@ class MyAuth {
       TeacherUserService.handleTeacherAuth(_userCredential);
     else
       StudentUserService.handleStudentAuth(_userCredential);
+
     return _userCredential;
+  }
+
+  static void logout() async {
+    await FirebaseAuth.instance.signOut();
+  }
+
+  static Future<GoogleSignInAccount?> signInSilently() async {
+    return await GoogleSignIn().signInSilently();
   }
 }

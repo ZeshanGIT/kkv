@@ -31,10 +31,11 @@ dependencies:
     sdk: flutter
   flutter_svg: ^0.22.0
   get: ^4.3.8
-  get_storage: ^2.0.3
+  # get_storage: ^2.0.3
   google_fonts: ^2.1.0
   google_sign_in: ^5.0.7
   liquid_progress_indicator: ^0.4.0
+  shared_preferences: ^2.0.7
   simple_animations: ^3.1.1
   supercharged: ^2.0.0
 
@@ -56,6 +57,8 @@ flutter:
   assets:
     - assets/images/get-started/
     - assets/images/teacher-or-student/
+    - assets/images/get-started/
+    - assets/images/common/
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

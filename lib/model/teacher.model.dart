@@ -50,4 +50,9 @@ class TeacherModel {
 
   factory TeacherModel.fromJson(String source) =>
       TeacherModel.fromMap(json.decode(source));
+
+  @override
+  String toString() {
+    return 'TeacherModel(\nid: $id\n name: $name\n email: $email\n profilePic: $profilePic\n empId: $empId)';
+  }
 }

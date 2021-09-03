@@ -9,8 +9,8 @@ import '../../common/widgets/top_bar.dart';
 import '../../model/user.model.dart';
 import 'teacher_signup_controller.dart';
 
-class TeacherSignup extends StatelessWidget {
-  TeacherSignup({Key? key}) : super(key: key);
+class TeacherSignupPage extends StatelessWidget {
+  TeacherSignupPage({Key? key}) : super(key: key);
 
   final UserModel? _userModel = Get.arguments as UserModel;
 

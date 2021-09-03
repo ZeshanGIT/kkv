@@ -7,12 +7,12 @@ import 'routes.dart';
 class AppRouter {
   static Map<String, WidgetBuilder> get routeMap {
     return {
-      Routes.GET_STARTED: (_) => GetStarted(),
+      Routes.GET_STARTED: (_) => GetStartedPage(),
       Routes.TEACHER_OR_STUDENT: (_) => TeacherOrStudentPage(),
     };
   }
 
   static PageRoute onGenerateRoute(RouteSettings routeSettings) {
-    return MaterialPageRoute(builder: (_) => GetStarted());
+    return MaterialPageRoute(builder: (_) => GetStartedPage());
   }
 }
