@@ -49,13 +49,6 @@ class _TeacherStudentCardState extends State<TeacherStudentCard>
   Widget build(BuildContext context) {
     return GetBuilder<TeacherOrStudentController>(
       builder: (TeacherOrStudentController teacherOrStudentController) {
-        // Animation<TimelineValue<AnimProps>> _animation =
-        //     widget.goTo == Routes.TEACHER_SIGNUP
-        //         ? teacherOrStudentController.teacherAnimation
-        //         : teacherOrStudentController.studentAnimation;
-        // Color _color = lerpedColor(
-        //   _animation.value.get(AnimProps.textColor),
-        // );
         if (widget.role == teacherOrStudentController.selectedRole) {
           controller.play();
         } else {

@@ -24,14 +24,12 @@ dependencies:
   after_layout: ^1.1.0
   cloud_firestore: ^2.5.1
   cupertino_icons: ^1.0.2
-  division: ^0.9.0
   firebase_auth: ^3.1.0
   firebase_core: ^1.6.0
   flutter:
     sdk: flutter
   flutter_svg: ^0.22.0
   get: ^4.3.8
-  # get_storage: ^2.0.3
   google_fonts: ^2.1.0
   google_sign_in: ^5.0.7
   liquid_progress_indicator: ^0.4.0
@@ -59,6 +57,7 @@ flutter:
     - assets/images/teacher-or-student/
     - assets/images/get-started/
     - assets/images/common/
+    - assets/images/home/
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

@@ -11,19 +11,16 @@ import 'package:shared_preferences/shared_preferences.dart';
 class TeacherUserService {
   static final CollectionReference _teachers =
       FirebaseFirestore.instance.collection(UserRole.TEACHER);
-  // static final GetStorage _box = GetStorage();
 
   static Future<void> handleTeacherAuth(UserCredential? _userCredential) async {
     final userDoc = await _teachers.doc(_userCredential?.user!.uid).get();
     if (userDoc.exists) {
-      // FIXME
-      // _box.write("role", UserRole.TEACHER);
-      // _box.write(
-      //   "user",
-      //   TeacherModel.fromMap(
-      //     userDoc.data() as Map<String, dynamic>,
-      //   ),
-      // );
+      TeacherModel _tempTeacher =
+          TeacherModel.fromMap(userDoc.data() as Map<String, dynamic>);
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      prefs.setString("role", UserRole.TEACHER);
+      prefs.setString("user", _tempTeacher.toJson());
+      prefs.setString("id", _tempTeacher.id);
       Get.offAllNamed(Routes.HOME);
     } else {
       UserModel userModel = UserModel(

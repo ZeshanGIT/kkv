@@ -9,8 +9,6 @@ import 'package:kkv/services/auth_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class LandingController extends GetxController {
-  // final GetStorage _box = GetStorage();
-
   @override
   Future<void> onReady() async {
     super.onReady();

@@ -41,12 +41,22 @@ class GetStartedPage extends StatelessWidget {
   }
 
   Widget buildGetStartedImage() {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(32),
-      child: SvgPicture.asset(
-        GetStartedAssets.getStartedImg,
-        width: Get.width - 96,
+    return Container(
+      width: Get.width - 96,
+      decoration: BoxDecoration(boxShadow: [
+        BoxShadow(
+          color: Color(0xFF5281A2).withOpacity(0.2),
+          offset: Offset(0, 6),
+          blurRadius: 20,
+        )
+      ]),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(32),
+        child: SvgPicture.asset(
+          GetStartedAssets.getStartedImg,
+          width: Get.width - 96,
+        ),
       ),
-    ).paddingAll(48);
+    ).paddingOnly(top: 32);
   }
 }

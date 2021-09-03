@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 // import 'package:get_storage/get_storage.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kkv/screens/home/home.dart';
+import 'package:kkv/screens/home/home_binding.dart';
 import 'package:kkv/screens/landing/landing.dart';
 import 'package:kkv/screens/landing/landing_binding.dart';
 
@@ -65,6 +66,7 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: Routes.HOME,
           page: () => HomePage(),
+          binding: HomeBinding(),
         ),
       ],
       debugShowCheckedModeBanner: false,
