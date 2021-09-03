@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:kkv/common/widgets/top_bar.dart';
 
 import '../../assets/teacher_or_student.dart';
 import '../../common/constants.dart';
-import '../../common/text_styles.dart';
 import '../../common/widgets/bottom_width_button.dart';
 import '../../router/routes.dart';
 import 'teacher_or_student.controller.dart';
@@ -17,7 +17,7 @@ class TeacherOrStudentPage extends StatelessWidget {
         mainAxisSize: MainAxisSize.max,
         children: [
           SIZED_BOX_MAX_WIDTH,
-          buildTopBar(),
+          TopBar(),
           SIZED_BOX_32,
           TeacherStudentCard(
             title: "Teacher",
@@ -42,56 +42,11 @@ class TeacherOrStudentPage extends StatelessWidget {
               (TeacherOrStudentController _teacherOrStudentController) {
             return BottomWidthBlackButton(
               text: "Sign in with Google",
-              onPressed: _teacherOrStudentController.selectedRole == null
-                  ? null
-                  : () {
-                      print("Sign in with Google");
-                    },
+              onPressed: _teacherOrStudentController.signInWithGoogle,
             ).paddingAll(8);
           }),
         ],
       ).paddingAll(16),
-    );
-  }
-
-  Row buildTopBar() {
-    return Row(
-      children: [
-        IconButton(
-          onPressed: () {
-            Get.back();
-          },
-          icon: Icon(
-            Icons.chevron_left_rounded,
-            size: 32,
-          ),
-        ),
-        Expanded(
-          child: Center(
-            child: Hero(
-              tag: "student-management",
-              child: Material(
-                type: MaterialType.transparency,
-                child: Text(
-                  "Student Management",
-                  style: STUDENT_MANAGEMENT_TEXT_STYLE,
-                ),
-              ),
-            ),
-          ),
-        ),
-        //Filler
-        Opacity(
-          opacity: 0,
-          child: IconButton(
-            onPressed: null,
-            icon: Icon(
-              Icons.chevron_left_rounded,
-              size: 32,
-            ),
-          ),
-        ),
-      ],
     );
   }
 }

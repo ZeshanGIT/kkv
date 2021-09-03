@@ -1,9 +1,11 @@
-import 'package:flutter/animation.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:get/state_manager.dart';
+import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:kkv/common/constants.dart';
+import 'package:kkv/model/user.model.dart';
 import 'package:kkv/router/routes.dart';
-import 'package:simple_animations/simple_animations.dart';
-import 'package:supercharged/supercharged.dart';
 
 enum AnimProps {
   liquidFill,
@@ -18,6 +20,33 @@ class TOSCardAnim {
 class TeacherOrStudentController extends GetxController
     with SingleGetTickerProviderMixin {
   String? selectedRole;
+
+  void signInWithGoogle() async {
+    // Trigger the authentication flow
+    final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+
+    final GoogleSignInAuthentication googleAuth =
+        await googleUser!.authentication;
+
+    final credential = GoogleAuthProvider.credential(
+      accessToken: googleAuth.accessToken,
+      idToken: googleAuth.idToken,
+    );
+
+    UserCredential userCredential =
+        await FirebaseAuth.instance.signInWithCredential(credential);
+    UserModel userModel = UserModel(
+      id: userCredential.user!.uid,
+      name: userCredential.user!.displayName ?? '',
+      email: userCredential.user!.email ?? '',
+      profilePic: userCredential.user!.photoURL ?? '',
+    );
+
+    Get.toNamed(
+      Routes.TEACHER_SIGNUP,
+      arguments: userModel,
+    );
+  }
   // late Animation<TimelineValue<AnimProps>> teacherAnimation;
   // late Animation<TimelineValue<AnimProps>> studentAnimation;
 

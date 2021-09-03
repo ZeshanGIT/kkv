@@ -14,11 +14,24 @@ const SIZED_BOX_16 = const SizedBox(
   height: 16,
 );
 
-const SIZED_BOX_32 = const SizedBox(
-  height: 32,
-  width: 32,
-);
 const SIZED_BOX_24 = const SizedBox(
   height: 24,
   width: 24,
 );
+
+const SIZED_BOX_32 = const SizedBox(
+  height: 32,
+  width: 32,
+);
+
+const SIZED_BOX_64 = const SizedBox(
+  height: 64,
+  width: 64,
+);
+
+class StoredDetails {
+  static const NAME = "name";
+  static const EMAIL_ADDRESS = "email";
+  static const DISPLAY_PICTURE = "dp";
+  static const USER_ID = "uid";
+}
