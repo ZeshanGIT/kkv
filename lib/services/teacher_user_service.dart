@@ -7,6 +7,7 @@ import '../common/constants.dart';
 import '../model/teacher.model.dart';
 import '../model/user.model.dart';
 import '../router/teacher_routes.dart';
+import '../utilities/extensions/shared_preferences/teacher_sp_extension.dart';
 
 class TeacherUserService {
   static final CollectionReference _teachers =
@@ -18,9 +19,7 @@ class TeacherUserService {
       TeacherModel _tempTeacher =
           TeacherModel.fromMap(userDoc.data() as Map<String, dynamic>);
       SharedPreferences prefs = await SharedPreferences.getInstance();
-      prefs.setString(StoredDetails.ROLE, UserRole.TEACHER);
-      prefs.setString(StoredDetails.USER, _tempTeacher.toJson());
-      prefs.setString(StoredDetails.USER_ID, _tempTeacher.id);
+      prefs.setTeacher(_tempTeacher);
       Get.offAllNamed(TeacherRoutes.HOME);
     } else {
       UserModel userModel = UserModel(
@@ -41,9 +40,7 @@ class TeacherUserService {
     final _tempTeacher = TeacherModel.fromUser(_userModel, empId ?? '');
     await _teachers.doc(_userModel.id).set(_tempTeacher.toMap());
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setString(StoredDetails.ROLE, UserRole.TEACHER);
-    prefs.setString(StoredDetails.USER, _tempTeacher.toJson());
-    prefs.setString(StoredDetails.USER_ID, _tempTeacher.id);
+    prefs.setTeacher(_tempTeacher);
     Get.toNamed(TeacherRoutes.HOME);
   }
 }

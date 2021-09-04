@@ -36,7 +36,7 @@ class TeacherHomePage extends GetView<TeacherHomeController> {
             ),
             SIZED_BOX_24,
             Text(
-              "Hi, ${controller.user?.name}",
+              "Hi, ${controller.user?.name ?? ''}",
               style: const TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w600,

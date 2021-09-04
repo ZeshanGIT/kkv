@@ -7,6 +7,7 @@ import '../common/constants.dart';
 import '../model/student.model.dart';
 import '../model/user.model.dart';
 import '../router/student_routes.dart';
+import '../utilities/extensions/shared_preferences/student_sp_extension.dart';
 
 class StudentUserService {
   static final CollectionReference _students =
@@ -18,9 +19,7 @@ class StudentUserService {
       StudentModel _tempStudent =
           StudentModel.fromMap(userDoc.data() as Map<String, dynamic>);
       SharedPreferences prefs = await SharedPreferences.getInstance();
-      prefs.setString(StoredDetails.ROLE, UserRole.STUDENT);
-      prefs.setString(StoredDetails.USER, _tempStudent.toJson());
-      prefs.setString(StoredDetails.USER_ID, _tempStudent.id);
+      prefs.setStudent(_tempStudent);
       Get.offAndToNamed(StudentRoutes.HOME);
     } else {
       UserModel userModel = UserModel(
@@ -51,8 +50,6 @@ class StudentUserService {
     );
     await _students.doc(userModel.id).set(_tempStudent.toMap());
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setString(StoredDetails.ROLE, UserRole.STUDENT);
-    prefs.setString(StoredDetails.USER, _tempStudent.toJson());
-    prefs.setString(StoredDetails.USER_ID, _tempStudent.id);
+    prefs.setStudent(_tempStudent);
   }
 }
