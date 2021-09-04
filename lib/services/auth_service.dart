@@ -1,5 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:kkv/router/routes.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'student_user_service.dart';
 import 'teacher_user_service.dart';
 import '../common/constants.dart';
@@ -31,7 +35,12 @@ class MyAuth {
   }
 
   static void logout() async {
+    GetStorage _box = GetStorage();
+    _box.erase();
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.clear();
     await FirebaseAuth.instance.signOut();
+    Get.offAndToNamed(Routes.LANDING);
   }
 
   static Future<GoogleSignInAccount?> signInSilently() async {

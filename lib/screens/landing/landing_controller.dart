@@ -1,20 +1,20 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:kkv/model/student.model.dart';
-import 'package:kkv/model/teacher.model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../common/constants.dart';
+import '../../model/student.model.dart';
+import '../../model/teacher.model.dart';
 import '../../router/routes.dart';
 import '../../router/student_routes.dart';
 import '../../router/teacher_routes.dart';
-import 'package:kkv/utilities/extensions/get_box/basic_extension.dart';
-import 'package:kkv/utilities/extensions/get_box/teacher_box_extension.dart';
-import 'package:kkv/utilities/extensions/get_box/student_box_extension.dart';
-import 'package:kkv/utilities/extensions/shared_preferences/basic_extension.dart';
-import 'package:kkv/utilities/extensions/shared_preferences/teacher_sp_extension.dart';
-import 'package:kkv/utilities/extensions/shared_preferences/student_sp_extension.dart';
+import '../../utilities/extensions/get_box/basic_extension.dart';
+import '../../utilities/extensions/get_box/student_box_extension.dart';
+import '../../utilities/extensions/get_box/teacher_box_extension.dart';
+import '../../utilities/extensions/shared_preferences/basic_extension.dart';
+import '../../utilities/extensions/shared_preferences/student_sp_extension.dart';
+import '../../utilities/extensions/shared_preferences/teacher_sp_extension.dart';
 
 class LandingController extends GetxController {
   final _box = GetStorage();

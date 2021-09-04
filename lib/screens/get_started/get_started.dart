@@ -25,7 +25,7 @@ class GetStartedPage extends StatelessWidget {
             child: Material(
               type: MaterialType.transparency,
               child: Text(
-                "Student Management",
+                TITLE,
                 style: STUDENT_MANAGEMENT_TEXT_STYLE,
               ),
             ),

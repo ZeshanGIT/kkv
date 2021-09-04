@@ -5,6 +5,8 @@ final BORDER_RADIUS_MEDIUM = BorderRadius.circular(8);
 // ignore: non_constant_identifier_names
 final BORDER_RADIUS_LARGE = BorderRadius.circular(30);
 
+const TITLE = "Student Management";
+
 const SIZED_BOX_MAX_WIDTH = const SizedBox(width: double.maxFinite);
 const SIZED_BOX_8 = const SizedBox(
   width: 8,

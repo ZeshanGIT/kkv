@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:kkv/screens/teacher/create_class/create_class_binding.dart';
 
 import 'router/routes.dart';
 import 'router/teacher_routes.dart';
@@ -31,6 +32,11 @@ class MyApp extends StatelessWidget {
     SystemChrome.setEnabledSystemUIOverlays([]);
     return GetMaterialApp(
       theme: ThemeData(
+        buttonColor: Colors.black,
+        primaryColor: Colors.black,
+        textSelectionTheme: TextSelectionThemeData(
+          cursorColor: Colors.black,
+        ),
         inputDecorationTheme: InputDecorationTheme(
           labelStyle: const TextStyle(
             color: Colors.black,
@@ -73,6 +79,7 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: TeacherRoutes.CREATE_CLASS,
           page: () => CreateClass(),
+          binding: CreateClassBinding(),
         ),
       ],
       debugShowCheckedModeBanner: false,

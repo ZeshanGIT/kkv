@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:kkv/common/constants.dart';
 
 import '../text_styles.dart';
 
 class TopBar extends StatelessWidget {
   final IconButton? leading;
   final IconButton? trailing;
+  final String title;
   const TopBar({
     Key? key,
     this.leading,
     this.trailing,
+    this.title = TITLE,
   }) : super(key: key);
 
   @override
@@ -29,11 +32,11 @@ class TopBar extends StatelessWidget {
         Expanded(
           child: Center(
             child: Hero(
-              tag: "student-management",
+              tag: title,
               child: Material(
                 type: MaterialType.transparency,
                 child: Text(
-                  "Student Management",
+                  title,
                   style: STUDENT_MANAGEMENT_TEXT_STYLE,
                 ),
               ),
