@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:kkv/common/constants.dart';
-import 'package:kkv/model/teacher.model.dart';
-import 'package:kkv/model/user.model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class TeacherHomeController extends GetxController
-    with SingleGetTickerProviderMixin {
+import '../../../common/constants.dart';
+import '../../../model/teacher.model.dart';
+
+class TeacherHomeController extends GetxController {
   String? role, id;
   TeacherModel? user;
 

@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:kkv/model/user.model.dart';
+import 'user.model.dart';
 
 class StudentModel {
   final String id;

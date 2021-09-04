@@ -1,13 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
-// import 'package:get_storage/get_storage.dart';
-import 'package:kkv/common/constants.dart';
-import 'package:kkv/model/teacher.model.dart';
-import 'package:kkv/model/user.model.dart';
-import 'package:kkv/router/routes.dart';
-import 'package:kkv/router/teacher_routes.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import '../common/constants.dart';
+import '../model/teacher.model.dart';
+import '../model/user.model.dart';
+import '../router/teacher_routes.dart';
 
 class TeacherUserService {
   static final CollectionReference _teachers =

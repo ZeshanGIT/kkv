@@ -1,79 +1,70 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:kkv/assets/common_asset.dart';
-import 'package:kkv/assets/home.dart';
-import 'package:kkv/common/constants.dart';
-import 'package:kkv/screens/teacher/widgets/teacher_floating_drawer.dart';
-import 'package:kkv/common/widgets/subject_card.dart';
-import 'package:kkv/common/widgets/top_bar.dart';
-import 'package:kkv/screens/teacher/home/teacher_home_controller.dart';
-import 'package:simple_animations/simple_animations.dart';
 
-class TeacherHomePage extends StatefulWidget {
-  TeacherHomePage({Key? key}) : super(key: key);
+import '../../../assets/home.dart';
+import '../../../common/constants.dart';
+import '../../../common/widgets/subject_card.dart';
+import '../../../common/widgets/top_bar.dart';
+import '../widgets/teacher_floating_drawer.dart';
+import 'teacher_home_controller.dart';
 
-  @override
-  _TeacherHomePageState createState() => _TeacherHomePageState();
-}
+class TeacherHomePage extends GetView<TeacherHomeController> {
+  const TeacherHomePage({Key? key}) : super(key: key);
 
-class _TeacherHomePageState extends State<TeacherHomePage> with AnimationMixin {
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<TeacherHomeController>(
-      builder: (homeController) => Scaffold(
-        drawerScrimColor: Colors.black12,
-        key: homeController.scaffoldKey,
-        drawer: TeacherFloatingDrawer(),
-        body: SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              TopBar(
-                leftIconButton: IconButton(
-                  onPressed: () => homeController.openDrawer(),
-                  icon: Icon(Icons.graphic_eq),
-                ),
-                rightIconButton: IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.notifications_none_rounded),
-                ),
+    return Scaffold(
+      drawerScrimColor: Colors.black12,
+      key: controller.scaffoldKey,
+      drawer: TeacherFloatingDrawer(),
+      body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            TopBar(
+              leading: IconButton(
+                onPressed: () => controller.openDrawer(),
+                icon: const Icon(Icons.graphic_eq),
               ),
-              SIZED_BOX_24,
-              Text(
-                "Hi, ${homeController.user?.name}",
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600,
-                ),
-              ).paddingAll(16),
-              SubjectCard(
-                title: "Mathematics",
-                darkColor: Color(0xFF4F2A74),
-                lightColor: Color(0xFFEDCFEA),
-                imgPath: HomeAssets.Cat,
-                onTap: () {},
+              trailing: IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.notifications_none_rounded),
               ),
-              SubjectCard(
-                title: "Social",
-                darkColor: Color(0xFFF48021),
-                lightColor: Color(0xFFFBDBA9),
-                imgPath: HomeAssets.Cat,
-                onTap: () {},
+            ),
+            SIZED_BOX_24,
+            Text(
+              "Hi, ${controller.user?.name}",
+              style: const TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
               ),
-              SubjectCard(
-                title: "Mathematics",
-                darkColor: Color(0xFF4F2A74),
-                lightColor: Color(0xFFEDCFEA),
-                imgPath: HomeAssets.Cat,
-                onTap: () {},
-              ),
-            ],
-          ).paddingAll(16),
-        ),
+            ).paddingAll(16),
+            SubjectCard(
+              title: "Mathematics",
+              darkColor: const Color(0xFF4F2A74),
+              lightColor: const Color(0xFFEDCFEA),
+              imgPath: HomeAssets.Cat,
+              onTap: () {},
+            ),
+            SubjectCard(
+              title: "Social",
+              darkColor: const Color(0xFFF48021),
+              lightColor: const Color(0xFFFBDBA9),
+              imgPath: HomeAssets.Cat,
+              onTap: () {},
+            ),
+            SubjectCard(
+              title: "Mathematics",
+              darkColor: const Color(0xFF4F2A74),
+              lightColor: const Color(0xFFEDCFEA),
+              imgPath: HomeAssets.Cat,
+              onTap: () {},
+            ),
+          ],
+        ).paddingAll(16),
       ),
     );
   }

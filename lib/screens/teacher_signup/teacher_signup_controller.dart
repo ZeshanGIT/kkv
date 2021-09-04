@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
-import 'package:kkv/services/teacher_user_service.dart';
 
 import '../../model/user.model.dart';
+import '../../services/teacher_user_service.dart';
 
 class TeacherSigupController extends GetxController {
   String? empId;

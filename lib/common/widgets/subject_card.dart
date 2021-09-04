@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:kkv/assets/common_asset.dart';
-import 'package:kkv/common/constants.dart';
+
+import '../../assets/common_asset.dart';
+import '../constants.dart';
 
 class SubjectCard extends StatelessWidget {
   const SubjectCard({

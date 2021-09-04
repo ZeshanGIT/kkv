@@ -1,15 +1,11 @@
-import 'dart:convert';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
-import 'package:kkv/common/constants.dart';
-// import 'package:get_storage/get_storage.dart';
-import 'package:kkv/model/teacher.model.dart';
-import 'package:kkv/router/routes.dart';
-import 'package:kkv/router/student_routes.dart';
-import 'package:kkv/router/teacher_routes.dart';
-import 'package:kkv/services/auth_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import '../../common/constants.dart';
+import '../../router/routes.dart';
+import '../../router/student_routes.dart';
+import '../../router/teacher_routes.dart';
 
 class LandingController extends GetxController {
   @override

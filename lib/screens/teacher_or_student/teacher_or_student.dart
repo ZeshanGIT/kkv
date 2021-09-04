@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:kkv/router/student_routes.dart';
-import 'package:kkv/router/teacher_routes.dart';
+import '../../router/student_routes.dart';
+import '../../router/teacher_routes.dart';
 import '../../common/widgets/top_bar.dart';
 
 import '../../assets/teacher_or_student.dart';
 import '../../common/constants.dart';
 import '../../common/widgets/bottom_width_button.dart';
-import '../../router/routes.dart';
 import 'teacher_or_student.controller.dart';
 import 'teacher_student_card.dart';
 

@@ -73,7 +73,6 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: TeacherRoutes.CREATE_CLASS,
           page: () => CreateClass(),
-          binding: TeacherHomeBinding(),
         ),
       ],
       debugShowCheckedModeBanner: false,

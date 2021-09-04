@@ -4,19 +4,19 @@ import 'package:get/get.dart';
 import '../text_styles.dart';
 
 class TopBar extends StatelessWidget {
-  final IconButton? leftIconButton;
-  final IconButton? rightIconButton;
+  final IconButton? leading;
+  final IconButton? trailing;
   const TopBar({
     Key? key,
-    this.leftIconButton,
-    this.rightIconButton,
+    this.leading,
+    this.trailing,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        leftIconButton ??
+        leading ??
             IconButton(
               onPressed: () {
                 Get.back();
@@ -41,7 +41,7 @@ class TopBar extends StatelessWidget {
           ),
         ),
         //Filler
-        rightIconButton ??
+        trailing ??
             Opacity(
               opacity: 0,
               child: IconButton(

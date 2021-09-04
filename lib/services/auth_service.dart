@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:kkv/services/student_user_service.dart';
-import 'package:kkv/services/teacher_user_service.dart';
+import 'student_user_service.dart';
+import 'teacher_user_service.dart';
 import '../common/constants.dart';
 
 class MyAuth {

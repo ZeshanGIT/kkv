@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:kkv/screens/landing/landing_controller.dart';
-import 'package:kkv/services/auth_service.dart';
+
+import '../../services/auth_service.dart';
+import 'landing_controller.dart';
 
 class LandingPage extends StatelessWidget {
   const LandingPage({Key? key}) : super(key: key);
