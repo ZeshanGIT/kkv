@@ -32,10 +32,9 @@ const SIZED_BOX_64 = const SizedBox(
 );
 
 class StoredDetails {
-  static const NAME = "name";
-  static const EMAIL_ADDRESS = "email";
-  static const DISPLAY_PICTURE = "dp";
   static const USER_ID = "uid";
+  static const USER = "user";
+  static const ROLE = "role";
 }
 
 class UserRole {

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:kkv/router/student_routes.dart';
+import 'package:kkv/router/teacher_routes.dart';
 import '../../common/widgets/top_bar.dart';
 
 import '../../assets/teacher_or_student.dart';
@@ -38,7 +40,7 @@ class TeacherOrStudentPage extends StatelessWidget {
                             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet",
                         color: Color(0xFFD5395E),
                         img: TeacherOrStudentAssets.teacher,
-                        goTo: Routes.TEACHER_SIGNUP,
+                        goTo: TeacherRoutes.SIGNUP,
                         onSelectColor: Color(0xFFF5EBD2),
                         role: UserRole.TEACHER,
                       ),
@@ -48,7 +50,7 @@ class TeacherOrStudentPage extends StatelessWidget {
                             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet",
                         color: Color(0xFF66BFA3),
                         img: TeacherOrStudentAssets.student,
-                        goTo: Routes.STUDENT_SIGNUP,
+                        goTo: StudentRoutes.SIGNUP,
                         onSelectColor: Color(0xFF38525F),
                         role: UserRole.STUDENT,
                       ),

@@ -4,13 +4,15 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 // import 'package:get_storage/get_storage.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:kkv/screens/home/home.dart';
-import 'package:kkv/screens/home/home_binding.dart';
 import 'package:kkv/screens/landing/landing.dart';
 import 'package:kkv/screens/landing/landing_binding.dart';
+import 'package:kkv/screens/teacher/create_class/create_class.dart';
 
 import 'router/routes.dart';
+import 'router/teacher_routes.dart';
 import 'screens/get_started/get_started.dart';
+import 'screens/teacher/home/teacher_home.dart';
+import 'screens/teacher/home/teacher_home_binding.dart';
 import 'screens/teacher_or_student/teacher_or_student.bindings.dart';
 import 'screens/teacher_or_student/teacher_or_student.dart';
 import 'screens/teacher_signup/teacher_signup.dart';
@@ -59,14 +61,19 @@ class MyApp extends StatelessWidget {
           binding: TeacherOrStudentBinding(),
         ),
         GetPage(
-          name: Routes.TEACHER_SIGNUP,
+          name: TeacherRoutes.SIGNUP,
           page: () => TeacherSignupPage(),
           binding: TeacherSignupBinding(),
         ),
         GetPage(
-          name: Routes.HOME,
-          page: () => HomePage(),
-          binding: HomeBinding(),
+          name: TeacherRoutes.HOME,
+          page: () => TeacherHomePage(),
+          binding: TeacherHomeBinding(),
+        ),
+        GetPage(
+          name: TeacherRoutes.CREATE_CLASS,
+          page: () => CreateClass(),
+          binding: TeacherHomeBinding(),
         ),
       ],
       debugShowCheckedModeBanner: false,

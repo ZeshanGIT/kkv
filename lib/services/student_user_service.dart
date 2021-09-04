@@ -8,6 +8,7 @@ import 'package:kkv/common/constants.dart';
 import 'package:kkv/model/student.model.dart';
 import 'package:kkv/model/user.model.dart';
 import 'package:kkv/router/routes.dart';
+import 'package:kkv/router/student_routes.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class StudentUserService {
@@ -20,10 +21,10 @@ class StudentUserService {
       StudentModel _tempStudent =
           StudentModel.fromMap(userDoc.data() as Map<String, dynamic>);
       SharedPreferences prefs = await SharedPreferences.getInstance();
-      prefs.setString("role", UserRole.STUDENT);
-      prefs.setString("user", _tempStudent.toJson());
-      prefs.setString("id", _tempStudent.id);
-      Get.offAndToNamed(Routes.HOME);
+      prefs.setString(StoredDetails.ROLE, UserRole.STUDENT);
+      prefs.setString(StoredDetails.USER, _tempStudent.toJson());
+      prefs.setString(StoredDetails.USER_ID, _tempStudent.id);
+      Get.offAndToNamed(StudentRoutes.HOME);
     } else {
       UserModel userModel = UserModel(
         id: _userCredential?.user!.uid ?? '',
@@ -33,7 +34,7 @@ class StudentUserService {
       );
 
       Get.toNamed(
-        Routes.STUDENT_SIGNUP,
+        StudentRoutes.SIGNUP,
         arguments: userModel,
       );
     }
@@ -53,8 +54,8 @@ class StudentUserService {
     );
     await _students.doc(userModel.id).set(_tempStudent.toMap());
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setString("role", UserRole.STUDENT);
-    prefs.setString("user", _tempStudent.toJson());
-    prefs.setString("id", _tempStudent.id);
+    prefs.setString(StoredDetails.ROLE, UserRole.STUDENT);
+    prefs.setString(StoredDetails.USER, _tempStudent.toJson());
+    prefs.setString(StoredDetails.USER_ID, _tempStudent.id);
   }
 }
