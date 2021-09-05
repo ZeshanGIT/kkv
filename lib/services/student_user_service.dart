@@ -1,24 +1,30 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../common/constants.dart';
 import '../model/student.model.dart';
 import '../model/user.model.dart';
 import '../router/student_routes.dart';
+import 'package:kkv/utilities/extensions/get_box/student_box_extension.dart';
 import '../utilities/extensions/shared_preferences/student_sp_extension.dart';
 
 class StudentUserService {
   static final CollectionReference _students =
       FirebaseFirestore.instance.collection(UserRole.STUDENT);
 
+  static final GetStorage _box = GetStorage();
+
   static Future<void> handleStudentAuth(UserCredential? _userCredential) async {
     final userDoc = await _students.doc(_userCredential?.user!.uid).get();
     if (userDoc.exists) {
       StudentModel _tempStudent =
           StudentModel.fromMap(userDoc.data() as Map<String, dynamic>);
+
       SharedPreferences prefs = await SharedPreferences.getInstance();
+      _box.setStudent(_tempStudent);
       prefs.setStudent(_tempStudent);
       Get.offAndToNamed(StudentRoutes.HOME);
     } else {

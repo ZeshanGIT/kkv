@@ -29,9 +29,9 @@ class _CreateClassState extends State<CreateClass> with AnimationMixin {
         child: Scaffold(
           body: SingleChildScrollView(
             physics: BouncingScrollPhysics(),
-            child: DirectSelectContainer(
-              child: SizedBox(
-                height: Get.height - 32,
+            child: SizedBox(
+              height: Get.height - 32,
+              child: DirectSelectContainer(
                 child: Column(
                   children: [
                     SizedBox(
