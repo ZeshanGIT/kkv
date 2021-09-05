@@ -22,20 +22,27 @@ environment:
 
 dependencies:
   after_layout: ^1.1.0
+  android_alarm_manager_plus: ^1.2.0
+  android_intent_plus: ^2.0.0
   cached_network_image: ^3.1.0
   cloud_firestore: ^2.5.1
+  connectivity_plus: ^1.1.0
   cupertino_icons: ^1.0.2
   direct_select_flutter: ^1.1.1
   firebase_auth: ^3.1.0
   firebase_core: ^1.6.0
   flutter:
     sdk: flutter
+  flutter_native_splash: ^1.2.1
+  flutter_speed_dial: ^4.3.0
   flutter_svg: ^0.22.0
   get: ^4.3.8
   get_storage: ^2.0.3
   google_fonts: ^2.1.0
   google_sign_in: ^5.0.7
+  infinite_scroll_pagination: ^3.1.0
   liquid_progress_indicator: ^0.4.0
+  share_plus: ^2.1.4
   shared_preferences: ^2.0.7
   simple_animations: ^3.1.1
   supercharged: ^2.0.0

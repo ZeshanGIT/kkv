@@ -1,6 +1,9 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:supercharged/supercharged.dart';
 
-class CreateClassController extends GetxController {
+class CreateClassController extends GetxController
+    with SingleGetTickerProviderMixin {
   String? selectedSubject;
   int? selectedSubjectIndex;
 
@@ -11,6 +14,15 @@ class CreateClassController extends GetxController {
   int? selectedSectionIndex;
 
   Function()? onCreate;
+
+  late AnimationController _placeHolderColorAnimationController =
+      AnimationController(
+    vsync: this,
+    duration: 500.milliseconds,
+  );
+  late Animation<Color?> placeHolderColorAnimation = Colors.black45
+      .tweenTo(Colors.black)
+      .animatedBy(_placeHolderColorAnimationController);
 
   final SUBJECTS = [
     "Select Subject",
@@ -72,5 +84,15 @@ class CreateClassController extends GetxController {
 
   void _onCreate() {}
 
-  void onTapAnywhereElse() {}
+  void Function() onTapAnywhereElse(BuildContext context) {
+    return () {
+      FocusScope.of(context).unfocus();
+      // _placeHolderColorAnimationController.reverse();
+      // print("On Tap Anywhere else");
+    };
+  }
+
+  void onDescTap() {
+    _placeHolderColorAnimationController.forward();
+  }
 }

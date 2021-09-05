@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">138588517041-d79uo4jo5lasdslhcd8i5s5vfddql7gb.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://arunachalamproject-sms.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">138588517041</string>
+    <string name="google_api_key" translatable="false">AIzaSyB3w8JG-mPqIejLtqAgA4nBu4to_ga8MSU</string>
+    <string name="google_app_id" translatable="false">1:138588517041:android:6ef027008ce1ac6c166890</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyB3w8JG-mPqIejLtqAgA4nBu4to_ga8MSU</string>
+    <string name="google_storage_bucket" translatable="false">arunachalamproject-sms.appspot.com</string>
+    <string name="project_id" translatable="false">arunachalamproject-sms</string>
+</resources>

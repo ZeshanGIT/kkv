@@ -1,8 +1,11 @@
+import 'dart:ui';
+
 import 'package:direct_select_flutter/direct_select_container.dart';
 import 'package:direct_select_flutter/direct_select_item.dart';
 import 'package:direct_select_flutter/direct_select_list.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:simple_animations/simple_animations.dart';
 
 import '../../../common/constants.dart';
 import '../../../common/text_styles.dart';
@@ -10,96 +13,123 @@ import '../../../common/widgets/bottom_width_button.dart';
 import '../../../common/widgets/top_bar.dart';
 import 'create_class_controller.dart';
 
-class CreateClass extends StatelessWidget {
+class CreateClass extends StatefulWidget {
   const CreateClass({Key? key}) : super(key: key);
 
+  @override
+  _CreateClassState createState() => _CreateClassState();
+}
+
+class _CreateClassState extends State<CreateClass> with AnimationMixin {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<CreateClassController>(
       builder: (controller) => GestureDetector(
-        onTap: FocusScope.of(context).unfocus,
+        onTap: controller.onTapAnywhereElse(context),
         child: Scaffold(
-          body: DirectSelectContainer(
-            child: Container(
-              height: Get.height,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  TopBar(
-                    title: "Create Class",
-                  ),
-                  Text(
-                    "Long press and move to select",
-                  ).paddingAll(16),
-                  Divider(),
-                  SIZED_BOX_16,
-                  ...listWithPadding([
-                    Text(
-                      "Grade",
-                      style: SMALL_SUB_HEADING,
-                    ),
-                    DirectSelectList<String>(
-                      values: controller.GRADES,
-                      defaultItemIndex: controller.selectedGradeIndex ?? 0,
-                      itemBuilder: (String value) => getDropDownMenuItem(value),
-                      focusedItemDecoration: _getDslDecoration(),
-                      onItemSelectedListener: (grade, index, context) {
-                        controller.onGradeSelected(grade, index);
-                      },
-                    ),
-                    SIZED_BOX_16,
-                    Text(
-                      "Section",
-                      style: SMALL_SUB_HEADING,
-                    ),
-                    DirectSelectList<String>(
-                      values: controller.SECTION,
-                      defaultItemIndex: controller.selectedSectionIndex ?? 0,
-                      itemBuilder: (String value) => getDropDownMenuItem(value),
-                      focusedItemDecoration: _getDslDecoration(),
-                      onItemSelectedListener: (section, index, context) {
-                        controller.onSectionSelected(section, index);
-                      },
-                    ),
-                    SIZED_BOX_16,
-                    Text(
-                      "Subject",
-                      style: SMALL_SUB_HEADING,
-                    ),
-                    DirectSelectList<String>(
-                      values: controller.SUBJECTS,
-                      defaultItemIndex: controller.selectedSubjectIndex ?? 0,
-                      itemBuilder: (String value) => getDropDownMenuItem(value),
-                      focusedItemDecoration: _getDslDecoration(),
-                      onItemSelectedListener: (subject, index, context) {
-                        controller.onSubjectSelected(subject, index);
-                      },
-                    ),
-                    SIZED_BOX_16,
-                    Text(
-                      "Description",
-                      style: SMALL_SUB_HEADING,
-                    ),
-                    SIZED_BOX_16,
-                    TextFormField(
-                      scrollPhysics: BouncingScrollPhysics(),
-                      decoration: InputDecoration(
-                        hintText: "Description",
-                        labelText: "Description",
+          body: SingleChildScrollView(
+            physics: BouncingScrollPhysics(),
+            child: DirectSelectContainer(
+              child: SizedBox(
+                height: Get.height - 32,
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: Get.height - 80,
+                      child: ListView(
+                        physics: BouncingScrollPhysics(),
+                        children: [
+                          TopBar(
+                            title: "Create Class",
+                          ),
+                          Text(
+                            "Long press and move to select",
+                          ).paddingAll(16),
+                          Divider(),
+                          SIZED_BOX_16,
+                          ...listWithPadding([
+                            Text(
+                              "Grade",
+                              style: SMALL_SUB_HEADING,
+                            ),
+                            DirectSelectList<String>(
+                              values: controller.GRADES,
+                              defaultItemIndex:
+                                  controller.selectedGradeIndex ?? 0,
+                              itemBuilder: (String value) =>
+                                  getDropDownMenuItem(value),
+                              focusedItemDecoration: _getDslDecoration(),
+                              onItemSelectedListener: (grade, index, context) {
+                                controller.onGradeSelected(grade, index);
+                              },
+                            ),
+                            SIZED_BOX_16,
+                            Text(
+                              "Section",
+                              style: SMALL_SUB_HEADING,
+                            ),
+                            DirectSelectList<String>(
+                              values: controller.SECTION,
+                              defaultItemIndex:
+                                  controller.selectedSectionIndex ?? 0,
+                              itemBuilder: (String value) =>
+                                  getDropDownMenuItem(value),
+                              focusedItemDecoration: _getDslDecoration(),
+                              onItemSelectedListener:
+                                  (section, index, context) {
+                                controller.onSectionSelected(section, index);
+                              },
+                            ),
+                            SIZED_BOX_16,
+                            Text(
+                              "Subject",
+                              style: SMALL_SUB_HEADING,
+                            ),
+                            DirectSelectList<String>(
+                              values: controller.SUBJECTS,
+                              defaultItemIndex:
+                                  controller.selectedSubjectIndex ?? 0,
+                              itemBuilder: (String value) =>
+                                  getDropDownMenuItem(value),
+                              focusedItemDecoration: _getDslDecoration(),
+                              onItemSelectedListener:
+                                  (subject, index, context) {
+                                controller.onSubjectSelected(subject, index);
+                              },
+                            ),
+                            SIZED_BOX_16,
+                            // Text(
+                            //   "Description",
+                            //   style: SMALL_SUB_HEADING,
+                            // ),
+                            // SIZED_BOX_16,
+                            TextFormField(
+                              decoration: InputDecoration(
+                                hintText: "Description",
+                                labelText: "Description",
+                                labelStyle: TextStyle(
+                                  color: controller
+                                      .placeHolderColorAnimation.value,
+                                ),
+                                alignLabelWithHint: true,
+                              ),
+                              keyboardType: TextInputType.multiline,
+                              maxLines: 3,
+                            ),
+                          ]),
+                        ],
                       ),
-                      keyboardType: TextInputType.multiline,
-                      maxLines: 3,
                     ),
-                  ]),
-                  Spacer(),
-                  BottomWidthBlackButton(
-                    text: "Create",
-                    onPressed: controller.onCreate,
-                  ),
-                ],
-              ).paddingAll(16),
+                    Spacer(),
+                    BottomWidthBlackButton(
+                      text: "Create",
+                      onPressed: controller.onCreate,
+                    ),
+                  ],
+                ),
+              ),
             ),
-          ),
+          ).paddingAll(16),
         ),
       ),
     );
