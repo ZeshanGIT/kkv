@@ -3,8 +3,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:kkv/assets/MyAssets.dart';
 
-import '../../../assets/common_asset.dart';
 import '../../../common/constants.dart';
 import '../../../common/widgets/floating_drawer.dart';
 import '../home/teacher_home_controller.dart';
@@ -70,7 +70,7 @@ class TeacherFloatingDrawer extends GetView<TeacherHomeController> {
             ),
           ),
           Spacer(),
-          SvgPicture.asset(CommonAsset.DRAWER_BOTTOM_ILLUS),
+          SvgPicture.asset(MyAssets.DrawerBottomIllus),
         ],
       ),
     );

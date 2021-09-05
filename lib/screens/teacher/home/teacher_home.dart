@@ -2,8 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:kkv/assets/MyAssets.dart';
 
-import '../../../assets/home.dart';
 import '../../../common/constants.dart';
 import '../../../common/widgets/subject_card.dart';
 import '../../../common/widgets/top_bar.dart';
@@ -46,21 +46,21 @@ class TeacherHomePage extends GetView<TeacherHomeController> {
               title: "Mathematics",
               darkColor: const Color(0xFF4F2A74),
               lightColor: const Color(0xFFEDCFEA),
-              imgPath: HomeAssets.Cat,
+              imgPath: MyAssets.Cat,
               onTap: () {},
             ),
             SubjectCard(
               title: "Social",
               darkColor: const Color(0xFFF48021),
               lightColor: const Color(0xFFFBDBA9),
-              imgPath: HomeAssets.Cat,
+              imgPath: MyAssets.Cat,
               onTap: () {},
             ),
             SubjectCard(
               title: "Mathematics",
               darkColor: const Color(0xFF4F2A74),
               lightColor: const Color(0xFFEDCFEA),
-              imgPath: HomeAssets.Cat,
+              imgPath: MyAssets.Cat,
               onTap: () {},
             ),
           ],

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:kkv/assets/MyAssets.dart';
 
-import '../../assets/teacher_or_student.dart';
 import '../../common/constants.dart';
 import '../../common/widgets/bottom_width_button.dart';
 import '../../common/widgets/top_bar.dart';
@@ -73,7 +73,7 @@ class TeacherSignupPage extends StatelessWidget {
         Spacer(),
         ClipOval(
           child: _userModel?.profilePic == ''
-              ? SvgPicture.asset(TeacherOrStudentAssets.teacher)
+              ? SvgPicture.asset(MyAssets.TeacherDpPlaceholder)
               : Image.network(
                   _userModel?.profilePic ?? '',
                   height: 96,

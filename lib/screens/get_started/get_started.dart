@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:kkv/assets/MyAssets.dart';
 
-import '../../assets/get_started.dart';
 import '../../common/constants.dart';
 import '../../common/text_styles.dart';
 import '../../common/widgets/bottom_width_button.dart';
@@ -53,7 +53,7 @@ class GetStartedPage extends StatelessWidget {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(32),
         child: SvgPicture.asset(
-          GetStartedAssets.getStartedImg,
+          MyAssets.GetStartedImg,
           width: Get.width - 96,
         ),
       ),

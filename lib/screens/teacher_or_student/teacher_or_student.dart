@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:kkv/assets/MyAssets.dart';
 
-import '../../assets/teacher_or_student.dart';
 import '../../common/constants.dart';
 import '../../common/widgets/bottom_width_button.dart';
 import '../../common/widgets/top_bar.dart';
@@ -35,7 +35,7 @@ class TeacherOrStudentPage extends StatelessWidget {
                             desc:
                                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet",
                             color: Color(0xFFD5395E),
-                            img: TeacherOrStudentAssets.teacher,
+                            img: MyAssets.TeacherDpPlaceholder,
                             goTo: TeacherRoutes.SIGNUP,
                             onSelectColor: Color(0xFFF5EBD2),
                             role: UserRole.TEACHER,
@@ -45,7 +45,7 @@ class TeacherOrStudentPage extends StatelessWidget {
                             desc:
                                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet",
                             color: Color(0xFF66BFA3),
-                            img: TeacherOrStudentAssets.student,
+                            img: MyAssets.StudentDpPlaceholder,
                             goTo: StudentRoutes.SIGNUP,
                             onSelectColor: Color(0xFF38525F),
                             role: UserRole.STUDENT,

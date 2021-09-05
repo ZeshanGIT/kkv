@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:kkv/assets/MyAssets.dart';
 
-import '../../assets/common_asset.dart';
 import '../constants.dart';
 
 class SubjectCard extends StatelessWidget {
@@ -84,7 +84,7 @@ class SubjectCard extends StatelessWidget {
                 darkColor,
                 BlendMode.srcATop,
               ),
-              child: SvgPicture.asset(CommonAsset.CARD_CIRCLE),
+              child: SvgPicture.asset(MyAssets.SubjectCardCircle),
             ),
           ),
         ],
