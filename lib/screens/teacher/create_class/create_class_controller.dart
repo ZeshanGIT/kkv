@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:supercharged/supercharged.dart';
+import 'package:kkv/common/class_props.dart';
 
-class CreateClassController extends GetxController
-    with SingleGetTickerProviderMixin {
+class CreateClassController extends GetxController {
   String? selectedSubject;
   int? selectedSubjectIndex;
 
@@ -15,57 +14,23 @@ class CreateClassController extends GetxController
 
   Function()? onCreate;
 
-  late AnimationController _placeHolderColorAnimationController =
-      AnimationController(
-    vsync: this,
-    duration: 500.milliseconds,
-  );
-  late Animation<Color?> placeHolderColorAnimation = Colors.black45
-      .tweenTo(Colors.black)
-      .animatedBy(_placeHolderColorAnimationController);
+  List<String> get subjects =>
+      ClassProps.GRADES[selectedGrade ?? ClassProps.SELECT_GRADE] ?? [];
 
-  final SUBJECTS = [
-    "Select Subject",
-    "Physics",
-    "Chemistry",
-    "Biology",
-    "Mathematics",
-    "Social Science",
-    "English",
-    "Tamil",
-    "Sanskrit",
-    "Hindi"
-  ];
-
-  final GRADES = [
-    "Select Grade",
-    "I",
-    "II",
-    "III",
-    "IV",
-    "V",
-    "VI",
-    "VII",
-    "VIII",
-    "IX",
-    "X"
-  ];
-
-  final SECTION = ["Select Section", "A", "B", "C", "D", "E", "F"];
-
-  onGradeSelected(String grade, int index) {
+  onGradeSelected(String grade, int index, BuildContext _) {
+    selectedSubject = selectedSubjectIndex = null;
     selectedGrade = grade;
     selectedGradeIndex = index;
     _setOnCreate();
   }
 
-  onSubjectSelected(String sub, int index) {
+  onSubjectSelected(String sub, int index, BuildContext _) {
     selectedSubject = sub;
     selectedSubjectIndex = index;
     _setOnCreate();
   }
 
-  onSectionSelected(String sec, int index) {
+  onSectionSelected(String sec, int index, BuildContext _) {
     selectedSection = sec;
     selectedSectionIndex = index;
     _setOnCreate();
@@ -93,6 +58,6 @@ class CreateClassController extends GetxController
   }
 
   void onDescTap() {
-    _placeHolderColorAnimationController.forward();
+    // _placeHolderColorAnimationController.forward();
   }
 }

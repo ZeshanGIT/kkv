@@ -15,8 +15,6 @@ class StudentUserService {
   static final CollectionReference _students =
       FirebaseFirestore.instance.collection(UserRole.STUDENT);
 
-  static final GetStorage _box = GetStorage();
-
   static Future<void> handleStudentAuth(UserCredential? _userCredential) async {
     final userDoc = await _students.doc(_userCredential?.user!.uid).get();
     if (userDoc.exists) {
@@ -24,7 +22,6 @@ class StudentUserService {
           StudentModel.fromMap(userDoc.data() as Map<String, dynamic>);
 
       SharedPreferences prefs = await SharedPreferences.getInstance();
-      _box.setStudent(_tempStudent);
       prefs.setStudent(_tempStudent);
       Get.offAndToNamed(StudentRoutes.HOME);
     } else {

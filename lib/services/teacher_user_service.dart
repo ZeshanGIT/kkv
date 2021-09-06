@@ -14,7 +14,6 @@ import '../utilities/extensions/shared_preferences/teacher_sp_extension.dart';
 class TeacherUserService {
   static final CollectionReference _teachers =
       FirebaseFirestore.instance.collection(UserRole.TEACHER);
-  static final GetStorage _box = GetStorage();
 
   static Future<void> handleTeacherAuth(UserCredential? _userCredential) async {
     final userDoc = await _teachers.doc(_userCredential?.user!.uid).get();
@@ -22,7 +21,6 @@ class TeacherUserService {
       TeacherModel _tempTeacher =
           TeacherModel.fromMap(userDoc.data() as Map<String, dynamic>);
       SharedPreferences prefs = await SharedPreferences.getInstance();
-      _box.setTeacher(_tempTeacher);
       prefs.setTeacher(_tempTeacher);
       Get.offAllNamed(TeacherRoutes.HOME);
     } else {

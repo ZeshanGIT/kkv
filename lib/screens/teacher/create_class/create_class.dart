@@ -5,6 +5,7 @@ import 'package:direct_select_flutter/direct_select_item.dart';
 import 'package:direct_select_flutter/direct_select_list.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:kkv/common/class_props.dart';
 import 'package:simple_animations/simple_animations.dart';
 
 import '../../../common/constants.dart';
@@ -13,14 +14,9 @@ import '../../../common/widgets/bottom_width_button.dart';
 import '../../../common/widgets/top_bar.dart';
 import 'create_class_controller.dart';
 
-class CreateClass extends StatefulWidget {
+class CreateClass extends StatelessWidget {
   const CreateClass({Key? key}) : super(key: key);
 
-  @override
-  _CreateClassState createState() => _CreateClassState();
-}
-
-class _CreateClassState extends State<CreateClass> with AnimationMixin {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<CreateClassController>(
@@ -53,15 +49,13 @@ class _CreateClassState extends State<CreateClass> with AnimationMixin {
                               style: SMALL_SUB_HEADING,
                             ),
                             DirectSelectList<String>(
-                              values: controller.GRADES,
+                              values: ClassProps.GRADES.keys.toList(),
                               defaultItemIndex:
                                   controller.selectedGradeIndex ?? 0,
-                              itemBuilder: (String value) =>
-                                  getDropDownMenuItem(value),
+                              itemBuilder: getDropDownMenuItem,
                               focusedItemDecoration: _getDslDecoration(),
-                              onItemSelectedListener: (grade, index, context) {
-                                controller.onGradeSelected(grade, index);
-                              },
+                              onItemSelectedListener:
+                                  controller.onGradeSelected,
                             ),
                             SIZED_BOX_16,
                             Text(
@@ -69,16 +63,13 @@ class _CreateClassState extends State<CreateClass> with AnimationMixin {
                               style: SMALL_SUB_HEADING,
                             ),
                             DirectSelectList<String>(
-                              values: controller.SECTION,
+                              values: ClassProps.SECTIONS,
                               defaultItemIndex:
                                   controller.selectedSectionIndex ?? 0,
-                              itemBuilder: (String value) =>
-                                  getDropDownMenuItem(value),
+                              itemBuilder: getDropDownMenuItem,
                               focusedItemDecoration: _getDslDecoration(),
                               onItemSelectedListener:
-                                  (section, index, context) {
-                                controller.onSectionSelected(section, index);
-                              },
+                                  controller.onSectionSelected,
                             ),
                             SIZED_BOX_16,
                             Text(
@@ -86,30 +77,22 @@ class _CreateClassState extends State<CreateClass> with AnimationMixin {
                               style: SMALL_SUB_HEADING,
                             ),
                             DirectSelectList<String>(
-                              values: controller.SUBJECTS,
+                              values: controller.subjects,
                               defaultItemIndex:
                                   controller.selectedSubjectIndex ?? 0,
                               itemBuilder: (String value) =>
                                   getDropDownMenuItem(value),
                               focusedItemDecoration: _getDslDecoration(),
                               onItemSelectedListener:
-                                  (subject, index, context) {
-                                controller.onSubjectSelected(subject, index);
-                              },
+                                  controller.onSubjectSelected,
                             ),
                             SIZED_BOX_16,
-                            // Text(
-                            //   "Description",
-                            //   style: SMALL_SUB_HEADING,
-                            // ),
-                            // SIZED_BOX_16,
                             TextFormField(
                               decoration: InputDecoration(
                                 hintText: "Description",
                                 labelText: "Description",
                                 labelStyle: TextStyle(
-                                  color: controller
-                                      .placeHolderColorAnimation.value,
+                                  color: Colors.black54,
                                 ),
                                 alignLabelWithHint: true,
                               ),
@@ -139,13 +122,14 @@ class _CreateClassState extends State<CreateClass> with AnimationMixin {
     return widgets.map((w) => w.paddingSymmetric(horizontal: 16)).toList();
   }
 
-  DirectSelectItem<String> getDropDownMenuItem(String value) {
+  DirectSelectItem<String> getDropDownMenuItem(String sec) {
     return DirectSelectItem<String>(
-        itemHeight: 56,
-        value: value,
-        itemBuilder: (context, value) {
-          return Text(value);
-        });
+      itemHeight: 56,
+      value: sec,
+      itemBuilder: (context, section) {
+        return Text(section);
+      },
+    );
   }
 
   _getDslDecoration() {
