@@ -25,14 +25,9 @@ class TeacherHomePage extends GetView<TeacherHomeController> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             TopBar(
-              leading: IconButton(
-                onPressed: () => controller.openDrawer(),
-                icon: const Icon(Icons.graphic_eq),
-              ),
-              trailing: IconButton(
-                onPressed: () {},
-                icon: const Icon(Icons.notifications_none_rounded),
-              ),
+              leadingIcon: Icons.graphic_eq_rounded,
+              leadingAction: controller.openDrawer,
+              trailingIcon: Icons.notifications_none_rounded,
             ),
             SIZED_BOX_24,
             Text(

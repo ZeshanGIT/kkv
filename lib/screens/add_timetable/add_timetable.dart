@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kkv/common/widgets/top_bar.dart';
 
 class AddTimetable extends StatelessWidget {
   const AddTimetable({Key? key}) : super(key: key);
@@ -6,7 +7,10 @@ class AddTimetable extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(),
+      body: TopBar(
+        title: "Add Timetable",
+        leadingIcon: Icons.close_rounded,
+      ),
     );
   }
 }

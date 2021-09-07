@@ -5,30 +5,29 @@ import '../constants.dart';
 import '../text_styles.dart';
 
 class TopBar extends StatelessWidget {
-  final IconButton? leading;
-  final IconButton? trailing;
+  final IconData? leadingIcon;
+  final Function()? leadingAction;
+  final IconData? trailingIcon;
+  final Function()? trailingAction;
   final String title;
-  const TopBar({
+
+  TopBar({
     Key? key,
-    this.leading,
-    this.trailing,
+    this.leadingIcon,
+    this.trailingIcon,
     this.title = TITLE,
+    this.leadingAction,
+    this.trailingAction,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        leading ??
-            IconButton(
-              onPressed: () {
-                Get.back();
-              },
-              icon: Icon(
-                Icons.chevron_left_rounded,
-                size: 32,
-              ),
-            ),
+        IconButton(
+          onPressed: leadingAction ?? Get.back,
+          icon: Icon(leadingIcon ?? Icons.chevron_left_rounded),
+        ),
         Expanded(
           child: Center(
             child: Hero(
@@ -44,17 +43,16 @@ class TopBar extends StatelessWidget {
           ),
         ),
         //Filler
-        trailing ??
-            Opacity(
-              opacity: 0,
-              child: IconButton(
-                onPressed: null,
-                icon: Icon(
-                  Icons.chevron_left_rounded,
-                  size: 32,
-                ),
-              ),
+        Opacity(
+          opacity: trailingIcon != null ? 1 : 0,
+          child: IconButton(
+            onPressed: trailingAction,
+            icon: Icon(
+              trailingIcon,
+              size: 32,
             ),
+          ),
+        ),
       ],
     );
   }

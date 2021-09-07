@@ -27,15 +27,16 @@ class TeacherRoutes {
       binding: TeacherHomeBinding(),
     ),
     GetPage(
-      name: CREATE_CLASS,
-      page: () => CreateClass(),
-      binding: CreateClassBinding(),
-    ),
-    GetPage(
-      name: ADD_TIMETABLE,
-      page: () => AddTimetable(),
-      binding: AddTimetableBinding(),
-      fullscreenDialog: true,
-    ),
+        name: CREATE_CLASS,
+        page: () => CreateClass(),
+        binding: CreateClassBinding(),
+        children: [
+          GetPage(
+            name: ADD_TIMETABLE,
+            page: () => AddTimetable(),
+            binding: AddTimetableBinding(),
+            fullscreenDialog: true,
+          ),
+        ]),
   ];
 }
