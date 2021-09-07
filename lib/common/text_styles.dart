@@ -11,3 +11,8 @@ const SMALL_SUB_HEADING = const TextStyle(
   color: Colors.black54,
   fontSize: 12,
 );
+
+const SUB_HEADING = const TextStyle(
+  color: Colors.black,
+  fontSize: 16,
+);

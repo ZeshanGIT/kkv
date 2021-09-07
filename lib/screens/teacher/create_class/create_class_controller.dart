@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:kkv/common/class_props.dart';
+
+import '../../../common/class_props.dart';
+import '../../../router/teacher_routes.dart';
 
 class CreateClassController extends GetxController {
   String? selectedSubject;
@@ -52,12 +54,13 @@ class CreateClassController extends GetxController {
   void Function() onTapAnywhereElse(BuildContext context) {
     return () {
       FocusScope.of(context).unfocus();
-      // _placeHolderColorAnimationController.reverse();
-      // print("On Tap Anywhere else");
     };
   }
 
-  void onDescTap() {
-    // _placeHolderColorAnimationController.forward();
+  void onAddTimetable() {
+    Get.toNamed(TeacherRoutes.ADD_TIMETABLE);
   }
+
+  String get gradePostfix => selectedGrade != null ? "Grade " : "";
+  String get sectionPrefix => selectedSection != null ? "Section " : "";
 }

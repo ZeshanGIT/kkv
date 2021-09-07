@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:kkv/assets/MyAssets.dart';
 
+import '../../assets/MyAssets.dart';
 import '../../common/constants.dart';
 import '../../common/widgets/bottom_width_button.dart';
 import '../../common/widgets/top_bar.dart';

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:kkv/services/auth_service.dart';
 
 import '../../../model/teacher.model.dart';
 import '../../../router/teacher_routes.dart';
+import '../../../services/auth_service.dart';
 import '../../../utilities/extensions/get_box/basic_extension.dart';
 import '../../../utilities/extensions/get_box/teacher_box_extension.dart';
 

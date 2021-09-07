@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
-import 'package:kkv/screens/teacher/create_class/create_class_controller.dart';
+
+import 'create_class_controller.dart';
 
 class CreateClassBinding extends Bindings {
   @override

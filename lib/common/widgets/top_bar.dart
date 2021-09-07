@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:kkv/common/constants.dart';
 
+import '../constants.dart';
 import '../text_styles.dart';
 
 class TopBar extends StatelessWidget {

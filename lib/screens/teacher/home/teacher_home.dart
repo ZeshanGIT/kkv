@@ -2,8 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:kkv/assets/MyAssets.dart';
 
+import '../../../assets/MyAssets.dart';
 import '../../../common/constants.dart';
 import '../../../common/widgets/subject_card.dart';
 import '../../../common/widgets/top_bar.dart';
