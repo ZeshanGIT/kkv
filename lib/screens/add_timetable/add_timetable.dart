@@ -25,7 +25,7 @@ class AddTimetable extends StatelessWidget {
               ),
               ...[
                 SIZED_BOX_32,
-                Text("Ullamco ea adipisicing commodo fugiat"),
+                Text("Students will be notified before the class starts"),
                 SIZED_BOX_16,
                 Divider(),
                 SIZED_BOX_16,

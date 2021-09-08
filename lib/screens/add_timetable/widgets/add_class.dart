@@ -94,7 +94,7 @@ class AddClass extends StatelessWidget {
                           ),
                         ),
                         TextButton.icon(
-                          onPressed: () {},
+                          onPressed: controller.toggleClassForm,
                           icon: Icon(Icons.close, color: Colors.red),
                           label: Text(
                             "Cancel",

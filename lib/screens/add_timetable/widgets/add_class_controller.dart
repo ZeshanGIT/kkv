@@ -5,6 +5,8 @@ import 'package:kkv/screens/teacher/create_class/create_class_controller.dart';
 import 'package:supercharged/supercharged.dart';
 import 'package:get/get.dart';
 
+import 'package:kkv/utilities/extensions/time_of_day_readable.dart';
+
 class AddClassController extends GetxController {
   bool isClassFormVisible = false;
 
@@ -12,9 +14,7 @@ class AddClassController extends GetxController {
   int? selectedDayIndex;
 
   TimeOfDay? _selectedTimeOfDay;
-  String? get selectedTimeOfDay => _selectedTimeOfDay != null
-      ? "${_selectedTimeOfDay!.hourOfPeriod} : ${_selectedTimeOfDay!.minute.toString().padLeft(2, '0')} ${_selectedTimeOfDay!.period.toString().split('.')[1].toUpperCase()}"
-      : null;
+  String? get selectedTimeOfDay => _selectedTimeOfDay.toReadableString();
 
   final createClassController = Get.find<CreateClassController>();
 
@@ -47,10 +47,8 @@ class AddClassController extends GetxController {
     return () {
       ClassModel tempModel =
           ClassModel(day: selectedDay!, time: _selectedTimeOfDay!);
-      print(tempModel);
-      // isClassFormVisible = false;
-      // createClassController
-      //     .addClass(ClassModel(day: selectedDay!, time: _selectedTimeOfDay!));
+      isClassFormVisible = false;
+      createClassController.addClass(tempModel);
     };
   }
 }

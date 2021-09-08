@@ -3,6 +3,7 @@ import 'package:direct_select_flutter/direct_select_item.dart';
 import 'package:direct_select_flutter/direct_select_list.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:kkv/screens/add_timetable/widgets/class_card.dart';
 
 import '../../../common/class_props.dart';
 import '../../../common/constants.dart';
@@ -115,9 +116,14 @@ class CreateClass extends StatelessWidget {
                             SIZED_BOX_16,
                             OutlinedButton(
                               onPressed: controller.onAddTimetable,
-                              child: Text("Tap to add timetable"),
+                              child: Text(
+                                  "Tap to ${controller.timetable.isEmpty ? 'add' : 'edit'} timetable"),
                             ),
-                            SIZED_BOX_64,
+                            SIZED_BOX_16,
+                            ...controller.timetable
+                                .map((classModel) => ClassCard(classModel))
+                                .toList(),
+                            SIZED_BOX_32,
                           ].withSymmetricPadding(16),
                         ],
                       ),
