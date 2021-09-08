@@ -78,7 +78,6 @@ class _TeacherStudentCardState extends State<TeacherStudentCard>
                   borderWidth: 0.0,
                   borderRadius: 8,
                   value: liquidFill.value,
-                  // value: _animation.value.get(AnimProps.liquidFill),
                   valueColor: AlwaysStoppedAnimation(widget.color),
                   backgroundColor: Colors.white,
                   direction: Axis.vertical,
@@ -99,7 +98,7 @@ class _TeacherStudentCardState extends State<TeacherStudentCard>
                     SIZED_BOX_16,
                     SizedBox(
                       height: 128,
-                      width: 196,
+                      width: Get.width - 212,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisSize: MainAxisSize.max,
@@ -120,6 +119,7 @@ class _TeacherStudentCardState extends State<TeacherStudentCard>
                               color: color.value,
                             ),
                           ),
+                          Spacer(),
                           Container(
                             height: 42,
                             width: double.maxFinite,

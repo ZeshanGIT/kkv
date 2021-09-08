@@ -1,12 +1,13 @@
 import 'package:clipboard/clipboard.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import 'package:kkv/utilities/extensions/time_diff.dart';
 import 'package:url_launcher/url_launcher.dart';
+
 import '../../../common/class_props.dart';
 import '../../../model/class_model.dart';
+import '../../../model/period_model.dart';
 import '../../../router/teacher_routes.dart';
+import '../../../utilities/extensions/time_diff.dart';
 
 class CreateClassController extends GetxController {
   String? selectedSubject;
@@ -18,12 +19,9 @@ class CreateClassController extends GetxController {
   String? selectedSection;
   int? selectedSectionIndex;
 
-  List<ClassModel> timetable = [];
-
-  List<String>? linkOnClipBoard;
-
-  String meetingLink = "";
+  List<PeriodModel> timetable = [];
   TextEditingController meetingLinkController = TextEditingController();
+  TextEditingController descriptionController = TextEditingController();
 
   onMeetingLinkTap() async {
     String tempLink = await FlutterClipboard.paste();
@@ -57,7 +55,7 @@ class CreateClassController extends GetxController {
     Get.focusScope?.unfocus();
   }
 
-  addClass(ClassModel classModel) {
+  addClass(PeriodModel classModel) {
     timetable.add(classModel);
     timetable.sort((a, b) {
       if (a.day != b.day)
@@ -66,7 +64,11 @@ class CreateClassController extends GetxController {
         return a.time - b.time;
     });
     update();
-    print(timetable);
+  }
+
+  removeClass(PeriodModel classModel) {
+    timetable.remove(classModel);
+    update();
   }
 
   Function()? onCreate;
@@ -98,7 +100,21 @@ class CreateClassController extends GetxController {
     update();
   }
 
-  void _onCreate() {}
+  void _onCreate() {
+    ClassModel classModel = ClassModel(
+      subject: selectedSubject!,
+      grade: selectedGrade!,
+      section: selectedSection!,
+      description: descriptionController.text,
+      meetingLink: meetingLinkController.text,
+      timetable: timetable,
+    );
+
+    Get.toNamed(
+      TeacherRoutes.CLASS_PREVIEW,
+      arguments: classModel,
+    );
+  }
 
   bool get _isValid {
     return selectedSubject != null &&

@@ -11,7 +11,7 @@ import '../utilities/extensions/shared_preferences/teacher_sp_extension.dart';
 
 class TeacherUserService {
   static final CollectionReference _teachers =
-      FirebaseFirestore.instance.collection(UserRole.TEACHER);
+      FirebaseFirestore.instance.collection(FirestoreCollections.TEACHER);
 
   static Future<void> handleTeacherAuth(UserCredential? _userCredential) async {
     final userDoc = await _teachers.doc(_userCredential?.user!.uid).get();

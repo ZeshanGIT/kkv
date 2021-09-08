@@ -33,7 +33,7 @@ class TeacherOrStudentPage extends StatelessWidget {
                           TeacherStudentCard(
                             title: "Teacher",
                             desc:
-                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet",
+                                "Lorem ipsum dolor sit amet, consectetur adipiscing",
                             color: Color(0xFFD5395E),
                             img: MyAssets.TeacherDpPlaceholder,
                             goTo: TeacherRoutes.SIGNUP,
@@ -42,8 +42,7 @@ class TeacherOrStudentPage extends StatelessWidget {
                           ),
                           TeacherStudentCard(
                             title: "Student",
-                            desc:
-                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet",
+                            desc: "Lorem ipsum dolor sit amet",
                             color: Color(0xFF66BFA3),
                             img: MyAssets.StudentDpPlaceholder,
                             goTo: StudentRoutes.SIGNUP,

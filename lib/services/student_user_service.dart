@@ -11,7 +11,7 @@ import '../utilities/extensions/shared_preferences/student_sp_extension.dart';
 
 class StudentUserService {
   static final CollectionReference _students =
-      FirebaseFirestore.instance.collection(UserRole.STUDENT);
+      FirebaseFirestore.instance.collection(FirestoreCollections.STUDENT);
 
   static Future<void> handleStudentAuth(UserCredential? _userCredential) async {
     final userDoc = await _students.doc(_userCredential?.user!.uid).get();

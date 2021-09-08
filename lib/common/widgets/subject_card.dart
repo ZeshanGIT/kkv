@@ -47,7 +47,7 @@ class SubjectCard extends StatelessWidget {
               children: [
                 SvgPicture.asset(
                   imgPath,
-                  height: 96,
+                  height: Get.width * 0.2,
                 ),
                 SIZED_BOX_16,
                 Column(

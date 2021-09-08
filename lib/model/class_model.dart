@@ -1,24 +1,54 @@
-import 'package:flutter/material.dart';
+import 'dart:convert';
 
-enum Day {
-  SelectDay,
-  Monday,
-  Tuesday,
-  Wednesday,
-  Thursday,
-  Friday,
-  Saturday,
-}
+import 'period_model.dart';
 
 class ClassModel {
-  final Day day;
-  final TimeOfDay time;
+  String subject;
+  String grade;
+  String section;
+  String description;
+  String meetingLink;
+  List<PeriodModel> timetable;
 
   ClassModel({
-    required this.day,
-    required this.time,
+    required this.subject,
+    required this.grade,
+    required this.section,
+    required this.description,
+    required this.meetingLink,
+    required this.timetable,
   });
 
   @override
-  String toString() => 'ClassModel(day: $day, time: $time)';
+  String toString() {
+    return 'ClassModel(subject: $subject, grade: $grade, section: $section, description: $description, meetingLink: $meetingLink, timetable: $timetable)';
+  }
+
+  Map<String, dynamic> toMap() {
+    return {
+      'subject': subject,
+      'grade': grade,
+      'section': section,
+      'description': description,
+      'meetingLink': meetingLink,
+      'timetable': timetable.map((x) => x.toMap()).toList(),
+    };
+  }
+
+  factory ClassModel.fromMap(Map<String, dynamic> map) {
+    return ClassModel(
+      subject: map['subject'],
+      grade: map['grade'],
+      section: map['section'],
+      description: map['description'],
+      meetingLink: map['meetingLink'],
+      timetable: List<PeriodModel>.from(
+          map['timetable']?.map((x) => PeriodModel.fromMap(x))),
+    );
+  }
+
+  String toJson() => json.encode(toMap());
+
+  factory ClassModel.fromJson(String source) =>
+      ClassModel.fromMap(json.decode(source));
 }

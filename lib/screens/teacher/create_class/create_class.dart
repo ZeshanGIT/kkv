@@ -3,15 +3,15 @@ import 'package:direct_select_flutter/direct_select_item.dart';
 import 'package:direct_select_flutter/direct_select_list.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:kkv/screens/add_timetable/widgets/class_card.dart';
 
 import '../../../common/class_props.dart';
 import '../../../common/constants.dart';
 import '../../../common/text_styles.dart';
 import '../../../common/widgets/bottom_width_button.dart';
 import '../../../common/widgets/top_bar.dart';
-import 'create_class_controller.dart';
 import '../../../utilities/extensions/with_padding.dart';
+import '../add_timetable/widgets/period_card.dart';
+import 'create_class_controller.dart';
 
 class CreateClass extends StatelessWidget {
   const CreateClass({Key? key}) : super(key: key);
@@ -124,6 +124,7 @@ class CreateClass extends StatelessWidget {
                                 ),
                                 alignLabelWithHint: true,
                               ),
+                              controller: controller.descriptionController,
                               keyboardType: TextInputType.multiline,
                               maxLines: 3,
                             ),
@@ -158,11 +159,9 @@ class CreateClass extends StatelessWidget {
                                   "Tap to ${controller.timetable.isEmpty ? 'add' : 'edit'} timetable"),
                             ),
                             SIZED_BOX_16,
-                            ...controller.timetable
-                                .map((classModel) => ClassCard(classModel))
-                                .toList(),
+                            ...controller.timetable.toPeriodCards(),
                             SIZED_BOX_32,
-                          ].withSymmetricPadding(16),
+                          ].withSymmetricPadding(),
                         ],
                       ),
                     ),

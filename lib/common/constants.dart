@@ -43,3 +43,9 @@ class UserRole {
   static const STUDENT = "student";
   static const TEACHER = "teacher";
 }
+
+class FirestoreCollections {
+  static const STUDENT = "student";
+  static const TEACHER = "teacher";
+  static const CLASS = "class";
+}
