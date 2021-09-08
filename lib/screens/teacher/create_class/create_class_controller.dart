@@ -1,7 +1,9 @@
+import 'package:clipboard/clipboard.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'package:kkv/utilities/extensions/time_diff.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../../../common/class_props.dart';
 import '../../../model/class_model.dart';
 import '../../../router/teacher_routes.dart';
@@ -17,6 +19,43 @@ class CreateClassController extends GetxController {
   int? selectedSectionIndex;
 
   List<ClassModel> timetable = [];
+
+  List<String>? linkOnClipBoard;
+
+  String meetingLink = "";
+  TextEditingController meetingLinkController = TextEditingController();
+
+  onMeetingLinkTap() async {
+    String tempLink = await FlutterClipboard.paste();
+    print("Clipboard link $tempLink");
+    if (await canLaunch(tempLink)) {
+      Get.dialog(
+        AlertDialog(
+          title: Text("Paste link from clipboard ?"),
+          content: Text(tempLink),
+          actions: [
+            TextButton(
+              onPressed: Get.back,
+              child: Text("No"),
+            ),
+            TextButton(
+              onPressed: pasteLinkFromClipboard,
+              child: Text("Yes"),
+            ),
+          ],
+        ),
+      );
+    }
+
+    update();
+  }
+
+  pasteLinkFromClipboard() async {
+    String tempLink = await FlutterClipboard.paste();
+    meetingLinkController.text = tempLink;
+    Get.back();
+    Get.focusScope?.unfocus();
+  }
 
   addClass(ClassModel classModel) {
     timetable.add(classModel);
@@ -59,18 +98,16 @@ class CreateClassController extends GetxController {
     update();
   }
 
+  void _onCreate() {}
+
   bool get _isValid {
     return selectedSubject != null &&
         selectedGrade != null &&
         selectedSection != null;
   }
 
-  void _onCreate() {}
-
-  void Function() onTapAnywhereElse(BuildContext context) {
-    return () {
-      FocusScope.of(context).unfocus();
-    };
+  void onTapAnywhereElse() {
+    Get.focusScope?.unfocus();
   }
 
   void onAddTimetable() {
@@ -78,5 +115,5 @@ class CreateClassController extends GetxController {
   }
 
   String get gradePostfix => selectedGrade != null ? " Grade" : "";
-  String get sectionPrefix => selectedSection != null ? "Section " : "";
+  String get sectionPostfix => selectedSection != null ? " Section" : "";
 }

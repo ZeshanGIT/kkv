@@ -20,7 +20,7 @@ class CreateClass extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<CreateClassController>(
       builder: (controller) => GestureDetector(
-        onTap: controller.onTapAnywhereElse(context),
+        onTap: controller.onTapAnywhereElse,
         child: Scaffold(
           body: SingleChildScrollView(
             physics: BouncingScrollPhysics(),
@@ -43,38 +43,62 @@ class CreateClass extends StatelessWidget {
                             SIZED_BOX_16,
                             Divider(),
                             SIZED_BOX_16,
-                            Text(
-                              "Grade",
-                              style: SMALL_SUB_HEADING,
-                            ),
-                            DirectSelectList<String>(
-                              values: ClassProps.GRADES.keys.toList(),
-                              defaultItemIndex:
-                                  controller.selectedGradeIndex ?? 0,
-                              itemBuilder: (grade) => getDropDownMenuItem(
-                                grade,
-                                postfix: controller.gradePostfix,
-                              ),
-                              focusedItemDecoration: _getDslDecoration(),
-                              onItemSelectedListener:
-                                  controller.onGradeSelected,
-                            ),
-                            SIZED_BOX_16,
-                            Text(
-                              "Section",
-                              style: SMALL_SUB_HEADING,
-                            ),
-                            DirectSelectList<String>(
-                              values: ClassProps.SECTIONS,
-                              defaultItemIndex:
-                                  controller.selectedSectionIndex ?? 0,
-                              itemBuilder: (sec) => getDropDownMenuItem(
-                                sec,
-                                prefix: controller.sectionPrefix,
-                              ),
-                              focusedItemDecoration: _getDslDecoration(),
-                              onItemSelectedListener:
-                                  controller.onSectionSelected,
+                            Row(
+                              children: [
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        "Grade",
+                                        style: SMALL_SUB_HEADING,
+                                      ),
+                                      DirectSelectList<String>(
+                                        values: ClassProps.GRADES.keys.toList(),
+                                        defaultItemIndex:
+                                            controller.selectedGradeIndex ?? 0,
+                                        itemBuilder: (grade) =>
+                                            getDropDownMenuItem(
+                                          grade,
+                                          postfix: controller.gradePostfix,
+                                        ),
+                                        focusedItemDecoration:
+                                            _getDslDecoration(),
+                                        onItemSelectedListener:
+                                            controller.onGradeSelected,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        "Section",
+                                        style: SMALL_SUB_HEADING,
+                                      ),
+                                      DirectSelectList<String>(
+                                        values: ClassProps.SECTIONS,
+                                        defaultItemIndex:
+                                            controller.selectedSectionIndex ??
+                                                0,
+                                        itemBuilder: (sec) =>
+                                            getDropDownMenuItem(
+                                          sec,
+                                          postfix: controller.sectionPostfix,
+                                        ),
+                                        focusedItemDecoration:
+                                            _getDslDecoration(),
+                                        onItemSelectedListener:
+                                            controller.onSectionSelected,
+                                      ),
+                                    ],
+                                  ),
+                                )
+                              ],
                             ),
                             SIZED_BOX_16,
                             Text(
@@ -102,6 +126,20 @@ class CreateClass extends StatelessWidget {
                               ),
                               keyboardType: TextInputType.multiline,
                               maxLines: 3,
+                            ),
+                            SIZED_BOX_16,
+                            TextFormField(
+                              controller: controller.meetingLinkController,
+                              onTap: controller.onMeetingLinkTap,
+                              decoration: InputDecoration(
+                                hintText: "Meeting Link",
+                                labelText: "Meeting Link",
+                                labelStyle: TextStyle(
+                                  color: Colors.black54,
+                                ),
+                                alignLabelWithHint: true,
+                              ),
+                              keyboardType: TextInputType.multiline,
                             ),
                             SIZED_BOX_32,
                             Text(
@@ -144,12 +182,12 @@ class CreateClass extends StatelessWidget {
   }
 
   DirectSelectItem<String> getDropDownMenuItem(String val,
-      {String prefix = "", String postfix = ""}) {
+      {String postfix = ""}) {
     return DirectSelectItem<String>(
-      itemHeight: 56,
+      itemHeight: 58,
       value: val,
       itemBuilder: (context, section) {
-        return Text("$prefix$section$postfix");
+        return Text("$section$postfix");
       },
     );
   }
