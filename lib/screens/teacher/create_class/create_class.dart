@@ -10,6 +10,7 @@ import '../../../common/text_styles.dart';
 import '../../../common/widgets/bottom_width_button.dart';
 import '../../../common/widgets/top_bar.dart';
 import 'create_class_controller.dart';
+import '../../../utilities/extensions/with_padding.dart';
 
 class CreateClass extends StatelessWidget {
   const CreateClass({Key? key}) : super(key: key);
@@ -35,91 +36,89 @@ class CreateClass extends StatelessWidget {
                           TopBar(
                             title: "Create Class",
                           ),
-                          Text(
-                            "Long press and move to select",
-                          ).paddingAll(16),
-                          Divider(),
-                          SIZED_BOX_16,
-                          ...listWithPadding(
-                            [
-                              Text(
-                                "Grade",
-                                style: SMALL_SUB_HEADING,
+                          ...[
+                            SIZED_BOX_32,
+                            Text("Long press and move to select"),
+                            SIZED_BOX_16,
+                            Divider(),
+                            SIZED_BOX_16,
+                            Text(
+                              "Grade",
+                              style: SMALL_SUB_HEADING,
+                            ),
+                            DirectSelectList<String>(
+                              values: ClassProps.GRADES.keys.toList(),
+                              defaultItemIndex:
+                                  controller.selectedGradeIndex ?? 0,
+                              itemBuilder: (grade) => getDropDownMenuItem(
+                                grade,
+                                postfix: controller.gradePostfix,
                               ),
-                              DirectSelectList<String>(
-                                values: ClassProps.GRADES.keys.toList(),
-                                defaultItemIndex:
-                                    controller.selectedGradeIndex ?? 0,
-                                itemBuilder: (grade) => getDropDownMenuItem(
-                                  grade,
-                                  postfix: controller.gradePostfix,
+                              focusedItemDecoration: _getDslDecoration(),
+                              onItemSelectedListener:
+                                  controller.onGradeSelected,
+                            ),
+                            SIZED_BOX_16,
+                            Text(
+                              "Section",
+                              style: SMALL_SUB_HEADING,
+                            ),
+                            DirectSelectList<String>(
+                              values: ClassProps.SECTIONS,
+                              defaultItemIndex:
+                                  controller.selectedSectionIndex ?? 0,
+                              itemBuilder: (sec) => getDropDownMenuItem(
+                                sec,
+                                prefix: controller.sectionPrefix,
+                              ),
+                              focusedItemDecoration: _getDslDecoration(),
+                              onItemSelectedListener:
+                                  controller.onSectionSelected,
+                            ),
+                            SIZED_BOX_16,
+                            Text(
+                              "Subject",
+                              style: SMALL_SUB_HEADING,
+                            ),
+                            DirectSelectList<String>(
+                              values: controller.subjects,
+                              defaultItemIndex:
+                                  controller.selectedSubjectIndex ?? 0,
+                              itemBuilder: (sub) => getDropDownMenuItem(sub),
+                              focusedItemDecoration: _getDslDecoration(),
+                              onItemSelectedListener:
+                                  controller.onSubjectSelected,
+                            ),
+                            SIZED_BOX_8,
+                            TextFormField(
+                              decoration: InputDecoration(
+                                hintText: "Description",
+                                labelText: "Description",
+                                labelStyle: TextStyle(
+                                  color: Colors.black54,
                                 ),
-                                focusedItemDecoration: _getDslDecoration(),
-                                onItemSelectedListener:
-                                    controller.onGradeSelected,
+                                alignLabelWithHint: true,
                               ),
-                              SIZED_BOX_16,
-                              Text(
-                                "Section",
-                                style: SMALL_SUB_HEADING,
-                              ),
-                              DirectSelectList<String>(
-                                values: ClassProps.SECTIONS,
-                                defaultItemIndex:
-                                    controller.selectedSectionIndex ?? 0,
-                                itemBuilder: (sec) => getDropDownMenuItem(
-                                  sec,
-                                  prefix: controller.sectionPrefix,
-                                ),
-                                focusedItemDecoration: _getDslDecoration(),
-                                onItemSelectedListener:
-                                    controller.onSectionSelected,
-                              ),
-                              SIZED_BOX_16,
-                              Text(
-                                "Subject",
-                                style: SMALL_SUB_HEADING,
-                              ),
-                              DirectSelectList<String>(
-                                values: controller.subjects,
-                                defaultItemIndex:
-                                    controller.selectedSubjectIndex ?? 0,
-                                itemBuilder: (sub) => getDropDownMenuItem(sub),
-                                focusedItemDecoration: _getDslDecoration(),
-                                onItemSelectedListener:
-                                    controller.onSubjectSelected,
-                              ),
-                              SIZED_BOX_8,
-                              TextFormField(
-                                decoration: InputDecoration(
-                                  hintText: "Description",
-                                  labelText: "Description",
-                                  labelStyle: TextStyle(
-                                    color: Colors.black54,
-                                  ),
-                                  alignLabelWithHint: true,
-                                ),
-                                keyboardType: TextInputType.multiline,
-                                maxLines: 3,
-                              ),
-                              SIZED_BOX_32,
-                              Text(
-                                "Timetable",
-                                style: SUB_HEADING,
-                              ),
-                              SIZED_BOX_8,
-                              Text(
-                                "Students will be notified before the class starts",
-                                style: SMALL_SUB_HEADING,
-                              ),
-                              SIZED_BOX_16,
-                              OutlinedButton(
-                                onPressed: controller.onAddTimetable,
-                                child: Text("Tap to add timetable"),
-                              ),
-                              SIZED_BOX_64,
-                            ],
-                          ),
+                              keyboardType: TextInputType.multiline,
+                              maxLines: 3,
+                            ),
+                            SIZED_BOX_32,
+                            Text(
+                              "Timetable",
+                              style: SUB_HEADING,
+                            ),
+                            SIZED_BOX_8,
+                            Text(
+                              "Students will be notified before the class starts",
+                              style: SMALL_SUB_HEADING,
+                            ),
+                            SIZED_BOX_16,
+                            OutlinedButton(
+                              onPressed: controller.onAddTimetable,
+                              child: Text("Tap to add timetable"),
+                            ),
+                            SIZED_BOX_64,
+                          ].withSymmetricPadding(16),
                         ],
                       ),
                     ),
@@ -136,10 +135,6 @@ class CreateClass extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  List<Widget> listWithPadding(List<Widget> widgets) {
-    return widgets.map((w) => w.paddingSymmetric(horizontal: 16)).toList();
   }
 
   DirectSelectItem<String> getDropDownMenuItem(String val,

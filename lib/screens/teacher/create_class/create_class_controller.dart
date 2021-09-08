@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'package:kkv/utilities/extensions/time_diff.dart';
 import '../../../common/class_props.dart';
+import '../../../model/class_model.dart';
 import '../../../router/teacher_routes.dart';
 
 class CreateClassController extends GetxController {
@@ -13,6 +15,20 @@ class CreateClassController extends GetxController {
 
   String? selectedSection;
   int? selectedSectionIndex;
+
+  List<ClassModel> timetable = [];
+
+  addClass(ClassModel classModel) {
+    timetable.add(classModel);
+    timetable.sort((a, b) {
+      if (a.day != b.day)
+        return a.day.index - b.day.index;
+      else
+        return a.time - b.time;
+    });
+    update();
+    print(timetable);
+  }
 
   Function()? onCreate;
 
@@ -61,6 +77,6 @@ class CreateClassController extends GetxController {
     Get.toNamed(TeacherRoutes.ADD_TIMETABLE);
   }
 
-  String get gradePostfix => selectedGrade != null ? "Grade " : "";
+  String get gradePostfix => selectedGrade != null ? " Grade" : "";
   String get sectionPrefix => selectedSection != null ? "Section " : "";
 }
