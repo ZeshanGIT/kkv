@@ -10,6 +10,7 @@ class TopBar extends StatelessWidget {
   final Function()? leadingAction;
   final IconData? trailingIcon;
   final Function()? trailingAction;
+  final bool isLeadingVisible;
   final String title;
 
   TopBar({
@@ -19,15 +20,22 @@ class TopBar extends StatelessWidget {
     this.title = TITLE,
     this.leadingAction,
     this.trailingAction,
+    this.isLeadingVisible = true,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        IconButton(
-          onPressed: leadingAction ?? Get.back,
-          icon: Icon(leadingIcon ?? Icons.chevron_left_rounded),
+        IgnorePointer(
+          ignoring: !isLeadingVisible,
+          child: Opacity(
+            opacity: isLeadingVisible ? 1.0 : 0,
+            child: IconButton(
+              onPressed: leadingAction ?? Get.back,
+              icon: Icon(leadingIcon ?? Icons.chevron_left_rounded),
+            ),
+          ),
         ),
         Expanded(
           child: Center(
@@ -38,13 +46,13 @@ class TopBar extends StatelessWidget {
           ),
         ),
         //Filler
-        Opacity(
-          opacity: trailingIcon != null ? 1 : 0,
-          child: IconButton(
-            onPressed: trailingAction,
-            icon: Icon(
-              trailingIcon,
-              size: 32,
+        IgnorePointer(
+          ignoring: trailingIcon == null,
+          child: Opacity(
+            opacity: trailingIcon != null ? 1 : 0,
+            child: IconButton(
+              onPressed: trailingAction ?? Get.back,
+              icon: Icon(trailingIcon),
             ),
           ),
         ),

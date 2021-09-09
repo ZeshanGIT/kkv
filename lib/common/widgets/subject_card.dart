@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:kkv/screens/teacher/home/teacher_home_controller.dart';
 
-import 'package:kkv/utilities/extensions/text_hero_transparent.dart';
 import '../../assets/MyAssets.dart';
 import '../../model/class_model.dart';
 import '../../model/subject_card_theme.dart';
+import '../../screens/teacher/home/teacher_home_controller.dart';
+import '../../utilities/extensions/text_hero_transparent.dart';
 import '../constants.dart';
 
 class SubjectCard extends GetView<TeacherHomeController> {

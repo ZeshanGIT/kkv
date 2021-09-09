@@ -24,17 +24,15 @@ class AddClassController extends GetxController {
     update();
   }
 
-  Function() onAddTime(BuildContext context) {
-    return () async {
-      TimeOfDay? temp = await showTimePicker(
-        context: context,
-        initialTime: TimeOfDay.fromDateTime(
-          DateTime.now().subtract(TimeOfDay.now().minute.minutes),
-        ),
-      );
-      _selectedTimeOfDay = temp ?? _selectedTimeOfDay;
-      update();
-    };
+  onAddTime() async {
+    TimeOfDay? temp = await showTimePicker(
+      context: Get.context!,
+      initialTime: TimeOfDay.fromDateTime(
+        DateTime.now().subtract(TimeOfDay.now().minute.minutes),
+      ),
+    );
+    _selectedTimeOfDay = temp ?? _selectedTimeOfDay;
+    update();
   }
 
   void toggleClassForm() {

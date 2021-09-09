@@ -64,7 +64,7 @@ class AddClass extends StatelessWidget {
                               ),
                               SIZED_BOX_8,
                               OutlinedButton(
-                                onPressed: controller.onAddTime(context),
+                                onPressed: controller.onAddTime,
                                 child: Text(
                                   controller.selectedTimeOfDay != null
                                       ? controller.selectedTimeOfDay!

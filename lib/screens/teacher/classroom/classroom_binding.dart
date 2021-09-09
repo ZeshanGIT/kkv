@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
-import 'package:kkv/screens/teacher/classroom/classroom_controller.dart';
+
+import 'classroom_controller.dart';
 
 class ClassroomBinding extends Bindings {
   @override

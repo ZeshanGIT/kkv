@@ -67,4 +67,6 @@ class FirestoreCollections {
   static const STUDENT = "student";
   static const TEACHER = "teacher";
   static const CLASS = "class";
+
+  static const String ASSIGNMENT = "assignment";
 }
