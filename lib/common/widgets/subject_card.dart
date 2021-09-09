@@ -1,30 +1,41 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:kkv/model/class_model.dart';
+import 'package:kkv/model/subject_card_theme.dart';
 
 import '../../assets/MyAssets.dart';
 import '../constants.dart';
 
 class SubjectCard extends StatelessWidget {
-  const SubjectCard({
-    Key? key,
-    required this.imgPath,
-    required this.title,
-    required this.darkColor,
-    required this.lightColor,
-    required this.onTap,
-  }) : super(key: key);
+  // const SubjectCard({
+  //   Key? key,
+  //   required this.imgPath,
+  //   required this.title,
+  //   required this.darkColor,
+  //   required this.lightColor,
+  //   required this.onTap,
+  // }) : super(key: key);
 
-  final String imgPath;
-  final String title;
-  final Color darkColor;
-  final Color lightColor;
-  final Function()? onTap;
+  // final String imgPath;
+  // final String title;
+  // final Color darkColor;
+  // final Color lightColor;
+  // final Function()? onTap;
+
+  final SubjectCardTheme subjectCardTheme;
+  final ClassModel classModel;
+
+  SubjectCard({
+    Key? key,
+    required this.classModel,
+    required this.subjectCardTheme,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
+      onTap: () {},
       child: Stack(
         children: [
           Container(
@@ -33,20 +44,19 @@ class SubjectCard extends StatelessWidget {
             decoration: BoxDecoration(
               boxShadow: [
                 BoxShadow(
-                  color: (Color.lerp(darkColor, lightColor, 0.9) ?? lightColor)
-                      .withOpacity(0.5),
+                  color: subjectCardTheme.shadowColor,
                   blurRadius: 20,
                   offset: Offset(0, 8),
                 )
               ],
               borderRadius: BORDER_RADIUS_MEDIUM,
-              color: lightColor,
+              color: subjectCardTheme.lightColor,
             ),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SvgPicture.asset(
-                  imgPath,
+                  subjectCardTheme.img,
                   height: Get.width * 0.2,
                 ),
                 SIZED_BOX_16,
@@ -56,9 +66,9 @@ class SubjectCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      title,
+                      classModel.subject,
                       style: TextStyle(
-                        color: darkColor,
+                        color: subjectCardTheme.darkColor,
                         fontWeight: FontWeight.w600,
                         fontSize: 18,
                       ),
@@ -66,7 +76,7 @@ class SubjectCard extends StatelessWidget {
                     Text(
                       "IV - A",
                       style: TextStyle(
-                        color: darkColor.withOpacity(0.7),
+                        color: subjectCardTheme.darkColor.withOpacity(0.7),
                         fontWeight: FontWeight.w600,
                         fontSize: 16,
                       ),
@@ -81,7 +91,7 @@ class SubjectCard extends StatelessWidget {
             right: 16,
             child: ColorFiltered(
               colorFilter: ColorFilter.mode(
-                darkColor,
+                subjectCardTheme.darkColor,
                 BlendMode.srcATop,
               ),
               child: SvgPicture.asset(MyAssets.SubjectCardCircle),

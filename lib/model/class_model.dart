@@ -8,6 +8,7 @@ class ClassModel {
   String section;
   String description;
   String meetingLink;
+  String? docId;
   List<PeriodModel> timetable;
 
   ClassModel({
@@ -19,10 +20,7 @@ class ClassModel {
     required this.timetable,
   });
 
-  @override
-  String toString() {
-    return 'ClassModel(subject: $subject, grade: $grade, section: $section, description: $description, meetingLink: $meetingLink, timetable: $timetable)';
-  }
+  String get classId => grade.toString() + section + subject;
 
   Map<String, dynamic> toMap() {
     return {
@@ -43,7 +41,10 @@ class ClassModel {
       description: map['description'],
       meetingLink: map['meetingLink'],
       timetable: List<PeriodModel>.from(
-          map['timetable']?.map((x) => PeriodModel.fromMap(x))),
+        map['timetable']?.map(
+          (x) => PeriodModel.fromMap(x),
+        ),
+      ),
     );
   }
 

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:kkv/model/class_model.dart';
+import 'package:kkv/services/teacher_class_service.dart';
 
 import '../../../model/teacher.model.dart';
 import '../../../router/teacher_routes.dart';
@@ -14,6 +16,15 @@ class TeacherHomeController extends GetxController {
 
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   final GetStorage _box = GetStorage();
+
+  List<ClassModel> classList = [];
+
+  @override
+  onReady() async {
+    classList = _box.getClassList();
+    update();
+    print(classList);
+  }
 
   openDrawer() {
     scaffoldKey.currentState!.openDrawer();
@@ -49,5 +60,10 @@ class TeacherHomeController extends GetxController {
         ],
       ),
     );
+  }
+
+  Future<void> onRefresh() async {
+    classList = await TeacherClassService.fetchClasses();
+    update();
   }
 }

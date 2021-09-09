@@ -10,4 +10,7 @@ class MyAssets {
   static const DpPlaceholder = "$IMAGES_DIR/dp_placeholder.svg";
   static const DrawerBottomIllus = "$IMAGES_DIR/drawer_bottom_illus.svg";
   static const CreateClassIllus = "$IMAGES_DIR/create_class.svg";
+  static const NoDataPad = "$IMAGES_DIR/no-data.svg";
+  static const Toucan = "$IMAGES_DIR/toucan.svg";
+  static const Owl = "$IMAGES_DIR/owl.svg";
 }

@@ -42,6 +42,7 @@ class LandingController extends GetxController {
             return;
           }
           _box.setStudent(_tempStudent);
+          _box.setClassList(sharedPreferences.getClassList());
           Get.offNamed(StudentRoutes.HOME);
         } else {
           TeacherModel? _tempTeacher = sharedPreferences.getTeacher();
@@ -50,6 +51,7 @@ class LandingController extends GetxController {
             return;
           }
           _box.setTeacher(_tempTeacher);
+          _box.setClassList(sharedPreferences.getClassList());
           Get.offNamed(TeacherRoutes.HOME);
         }
       }

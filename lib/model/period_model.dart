@@ -1,23 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-
-extension DayFromString on String {
-  Day toDay() {
-    return Day.values.firstWhere(
-      (d) => d.toString().substring(4) == this,
-      orElse: () => Day.SelectDay,
-    );
-  }
-
-  TimeOfDay toTimeOfDay() {
-    List<String> tempString = this.split(":");
-    return TimeOfDay(
-      hour: int.parse(tempString[0]),
-      minute: int.parse(tempString[1]),
-    );
-  }
-}
+import 'package:kkv/utilities/extensions/on_string.dart';
 
 enum Day {
   SelectDay,
@@ -50,8 +34,8 @@ class PeriodModel {
 
   factory PeriodModel.fromMap(Map<String, dynamic> map) {
     return PeriodModel(
-      day: map['day'].toString().toDay(),
-      time: map['time'].toString().toTimeOfDay(),
+      day: map['day'].toString().toDay,
+      time: map['time'].toString().toTimeOfDay,
     );
   }
 

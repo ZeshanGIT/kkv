@@ -43,6 +43,7 @@ dependencies:
   google_sign_in: ^5.0.7
   infinite_scroll_pagination: ^3.1.0
   liquid_progress_indicator: ^0.4.0
+  liquid_pull_to_refresh: ^3.0.0
   share_plus: ^2.1.4
   shared_preferences: ^2.0.7
   simple_animations: ^3.1.1

@@ -9,6 +9,7 @@ import '../../common/widgets/top_bar.dart';
 import '../../model/user.model.dart';
 import 'teacher_signup_controller.dart';
 
+// TODO: FIXME
 class TeacherSignupPage extends StatelessWidget {
   TeacherSignupPage({Key? key}) : super(key: key);
 
@@ -19,7 +20,7 @@ class TeacherSignupPage extends StatelessWidget {
     return Scaffold(
       body: GetBuilder<TeacherSigupController>(
           builder: (teacherSignUpController) {
-        return Column(
+        return ListView(
           children: [
             TopBar(),
             SIZED_BOX_32,
