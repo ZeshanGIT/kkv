@@ -1,6 +1,7 @@
 import 'package:flutter/rendering.dart';
-import 'package:kkv/assets/MyAssets.dart';
-import 'package:kkv/common/class_props.dart';
+
+import '../assets/MyAssets.dart';
+import '../common/class_props.dart';
 
 class SubjectCardTheme {
   final Color lightColor;

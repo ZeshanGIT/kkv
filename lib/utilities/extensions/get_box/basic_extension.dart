@@ -1,7 +1,7 @@
 import 'package:get_storage/get_storage.dart';
-import 'package:kkv/model/class_model.dart';
 
 import '../../../common/constants.dart';
+import '../../../model/class_model.dart';
 
 extension BasicBoxExtension on GetStorage {
   Future<void> setRole(String role) async {

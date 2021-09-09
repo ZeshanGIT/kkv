@@ -7,7 +7,9 @@ import '../common/constants.dart';
 import '../model/teacher.model.dart';
 import '../model/user.model.dart';
 import '../router/teacher_routes.dart';
+import '../utilities/extensions/shared_preferences/basic_extension.dart';
 import '../utilities/extensions/shared_preferences/teacher_sp_extension.dart';
+import 'teacher_class_service.dart';
 
 class TeacherUserService {
   static final CollectionReference _teachers =
@@ -20,6 +22,7 @@ class TeacherUserService {
           TeacherModel.fromMap(userDoc.data() as Map<String, dynamic>);
       SharedPreferences prefs = await SharedPreferences.getInstance();
       prefs.setTeacher(_tempTeacher);
+      prefs.setClassList(await TeacherClassService.fetchClasses());
       Get.offAllNamed(TeacherRoutes.HOME);
     } else {
       UserModel userModel = UserModel(

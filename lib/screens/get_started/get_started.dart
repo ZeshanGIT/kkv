@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
+import '../../utilities/extensions/text_hero_transparent.dart';
 import '../../assets/MyAssets.dart';
 import '../../common/constants.dart';
 import '../../common/text_styles.dart';
@@ -20,16 +21,10 @@ class GetStartedPage extends StatelessWidget {
           SIZED_BOX_MAX_WIDTH,
           buildGetStartedImage(),
           SIZED_BOX_24,
-          Hero(
-            tag: "student-management",
-            child: Material(
-              type: MaterialType.transparency,
-              child: Text(
-                TITLE,
-                style: HEADING_TEXT_STYLE,
-              ),
-            ),
-          ),
+          Text(
+            TITLE,
+            style: HEADING_TEXT_STYLE,
+          ).hero(TITLE),
           Spacer(),
           BottomWidthBlackButton(
             text: "Get started",

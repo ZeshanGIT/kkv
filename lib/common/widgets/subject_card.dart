@@ -1,28 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:kkv/model/class_model.dart';
-import 'package:kkv/model/subject_card_theme.dart';
+import 'package:kkv/screens/teacher/home/teacher_home_controller.dart';
 
+import 'package:kkv/utilities/extensions/text_hero_transparent.dart';
 import '../../assets/MyAssets.dart';
+import '../../model/class_model.dart';
+import '../../model/subject_card_theme.dart';
 import '../constants.dart';
 
-class SubjectCard extends StatelessWidget {
-  // const SubjectCard({
-  //   Key? key,
-  //   required this.imgPath,
-  //   required this.title,
-  //   required this.darkColor,
-  //   required this.lightColor,
-  //   required this.onTap,
-  // }) : super(key: key);
-
-  // final String imgPath;
-  // final String title;
-  // final Color darkColor;
-  // final Color lightColor;
-  // final Function()? onTap;
-
+class SubjectCard extends GetView<TeacherHomeController> {
   final SubjectCardTheme subjectCardTheme;
   final ClassModel classModel;
 
@@ -35,7 +22,7 @@ class SubjectCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () => controller.onOpenSubject(classModel),
       child: Stack(
         children: [
           Container(
@@ -55,9 +42,12 @@ class SubjectCard extends StatelessWidget {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SvgPicture.asset(
-                  subjectCardTheme.img,
-                  height: Get.width * 0.2,
+                Hero(
+                  tag: classModel.classId + '-img',
+                  child: SvgPicture.asset(
+                    subjectCardTheme.img,
+                    height: Get.width * 0.2,
+                  ),
                 ),
                 SIZED_BOX_16,
                 Column(
@@ -67,20 +57,16 @@ class SubjectCard extends StatelessWidget {
                   children: [
                     Text(
                       classModel.subject,
-                      style: TextStyle(
+                      style: SUBJECT_TITLE_STYLE.copyWith(
                         color: subjectCardTheme.darkColor,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 18,
                       ),
-                    ),
+                    ).hero(classModel.classId + '-title'),
                     Text(
                       classModel.grade + " - " + classModel.section,
-                      style: TextStyle(
+                      style: SUBJECT_SUB_HEADING_STYLE.copyWith(
                         color: subjectCardTheme.darkColor.withOpacity(0.7),
-                        fontWeight: FontWeight.w600,
-                        fontSize: 16,
                       ),
-                    ),
+                    ).hero(classModel.classId + '-grade-sec'),
                   ],
                 ),
               ],

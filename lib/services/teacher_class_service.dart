@@ -2,12 +2,13 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:kkv/common/constants.dart';
-import 'package:kkv/model/class_model.dart';
-import 'package:kkv/router/teacher_routes.dart';
-import 'package:kkv/utilities/extensions/get_box/basic_extension.dart';
-import 'package:kkv/utilities/extensions/shared_preferences/basic_extension.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import '../common/constants.dart';
+import '../model/class_model.dart';
+import '../router/teacher_routes.dart';
+import '../utilities/extensions/get_box/basic_extension.dart';
+import '../utilities/extensions/shared_preferences/basic_extension.dart';
 
 class TeacherClassService {
   static final _class =
@@ -27,7 +28,7 @@ class TeacherClassService {
         AlertDialog(
           title: Text("Class already exists"),
           content: Text(
-            "Tap ok to continue\n\n${classModel.grade} Grade\n${classModel.section} Section\n${classModel.subject}",
+            "Tap ok to continue\n\n${classModel.subject}\n${classModel.grade} - ${classModel.section}\n",
           ),
           actions: [
             TextButton(

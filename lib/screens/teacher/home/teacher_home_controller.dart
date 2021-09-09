@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:kkv/model/class_model.dart';
-import 'package:kkv/services/teacher_class_service.dart';
 
+import '../../../model/class_model.dart';
 import '../../../model/teacher.model.dart';
 import '../../../router/teacher_routes.dart';
 import '../../../services/auth_service.dart';
+import '../../../services/teacher_class_service.dart';
 import '../../../utilities/extensions/get_box/basic_extension.dart';
 import '../../../utilities/extensions/get_box/teacher_box_extension.dart';
 
@@ -65,7 +65,10 @@ class TeacherHomeController extends GetxController {
 
   Future<void> onRefresh() async {
     classList = await TeacherClassService.fetchClasses();
-    print(classList);
     update();
+  }
+
+  onOpenSubject(ClassModel classModel) {
+    Get.toNamed(TeacherRoutes.CLASS_ROOM, arguments: classModel);
   }
 }

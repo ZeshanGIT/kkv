@@ -157,9 +157,9 @@ abstract class Subjects {
 
 abstract class Subject {
   static const ENGLISH = "English";
-  static const TAMIL = "Tamil";
-  static const HINDI = "Hindi";
-  static const SANSKRIT = "Sanskrit";
+  static const TAMIL = "Tamil - தமிழ்";
+  static const HINDI = "Hindi - हिंदी";
+  static const SANSKRIT = "Sanskrit - संस्कृतम्";
 
   static const MATHEMATICS = "Mathematics";
 

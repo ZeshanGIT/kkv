@@ -1,7 +1,8 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:kkv/utilities/extensions/on_string.dart';
+
+import '../utilities/extensions/on_string.dart';
 
 enum Day {
   SelectDay,

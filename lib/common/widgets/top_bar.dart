@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../utilities/extensions/text_hero_transparent.dart';
 import '../constants.dart';
 import '../text_styles.dart';
 
@@ -30,16 +31,10 @@ class TopBar extends StatelessWidget {
         ),
         Expanded(
           child: Center(
-            child: Hero(
-              tag: title,
-              child: Material(
-                type: MaterialType.transparency,
-                child: Text(
-                  title,
-                  style: HEADING_TEXT_STYLE,
-                ),
-              ),
-            ),
+            child: Text(
+              title,
+              style: HEADING_TEXT_STYLE,
+            ).hero(title),
           ),
         ),
         //Filler

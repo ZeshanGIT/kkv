@@ -24,36 +24,34 @@ class LandingController extends GetxController {
     super.onReady();
     User? user = FirebaseAuth.instance.currentUser;
     if (user != null) {
-      {
-        SharedPreferences sharedPreferences =
-            await SharedPreferences.getInstance();
-        String? role = sharedPreferences.getRole();
-        String? uid = sharedPreferences.getUid();
-        if (role == null || uid == null) {
+      SharedPreferences sharedPreferences =
+          await SharedPreferences.getInstance();
+      String? role = sharedPreferences.getRole();
+      String? uid = sharedPreferences.getUid();
+      if (role == null || uid == null) {
+        Get.offNamed(Routes.GET_STARTED);
+        return;
+      }
+      _box.setRole(role);
+      _box.setUid(uid);
+      if (role == UserRole.STUDENT) {
+        StudentModel? _tempStudent = sharedPreferences.getStudent();
+        if (_tempStudent == null) {
           Get.offNamed(Routes.GET_STARTED);
           return;
         }
-        _box.setRole(role);
-        _box.setUid(uid);
-        if (role == UserRole.STUDENT) {
-          StudentModel? _tempStudent = sharedPreferences.getStudent();
-          if (_tempStudent == null) {
-            Get.offNamed(Routes.GET_STARTED);
-            return;
-          }
-          _box.setStudent(_tempStudent);
-          _box.setClassList(sharedPreferences.getClassList());
-          Get.offNamed(StudentRoutes.HOME);
-        } else {
-          TeacherModel? _tempTeacher = sharedPreferences.getTeacher();
-          if (_tempTeacher == null) {
-            Get.offNamed(Routes.GET_STARTED);
-            return;
-          }
-          _box.setTeacher(_tempTeacher);
-          _box.setClassList(sharedPreferences.getClassList());
-          Get.offNamed(TeacherRoutes.HOME);
+        _box.setStudent(_tempStudent);
+        _box.setClassList(sharedPreferences.getClassList());
+        Get.offNamed(StudentRoutes.HOME);
+      } else {
+        TeacherModel? _tempTeacher = sharedPreferences.getTeacher();
+        if (_tempTeacher == null) {
+          Get.offNamed(Routes.GET_STARTED);
+          return;
         }
+        _box.setTeacher(_tempTeacher);
+        _box.setClassList(sharedPreferences.getClassList());
+        Get.offNamed(TeacherRoutes.HOME);
       }
     } else
       Get.offNamed(Routes.GET_STARTED);

@@ -37,6 +37,20 @@ const SIZED_BOX_128 = const SizedBox(
   width: 128,
 );
 
+const SUBJECT_TITLE_STYLE = const TextStyle(
+  fontSize: 18,
+  fontWeight: FontWeight.w600,
+);
+
+const SUBJECT_SUB_HEADING_STYLE = const TextStyle(
+  fontSize: 16,
+  fontWeight: FontWeight.w600,
+);
+
+const SUBJECT_DESC_STYLE = const TextStyle(
+  fontSize: 12,
+);
+
 class StoredDetails {
   static const USER_ID = "uid";
   static const USER = "user";

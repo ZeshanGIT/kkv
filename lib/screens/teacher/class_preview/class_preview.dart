@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:kkv/common/widgets/bottom_width_button.dart';
-import 'package:kkv/screens/teacher/class_preview/class_preview_controller.dart';
 
 import '../../../../common/constants.dart';
 import '../../../../common/text_styles.dart';
 import '../../../../common/widgets/top_bar.dart';
 import '../../../../model/class_model.dart';
 import '../../../../utilities/extensions/with_padding.dart';
-import 'package:kkv/screens/teacher/add_timetable/widgets/period_card.dart';
+import '../../../common/widgets/bottom_width_button.dart';
+import '../add_timetable/widgets/period_card.dart';
+import 'class_preview_controller.dart';
 
 class ClassPreview extends GetView<ClassPreviewController> {
   const ClassPreview({Key? key}) : super(key: key);

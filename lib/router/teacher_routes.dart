@@ -1,9 +1,12 @@
 import 'package:get/get.dart';
-import 'package:kkv/screens/teacher/class_preview/class_preview_binding.dart';
+import 'package:kkv/model/class_model.dart';
+import 'package:kkv/screens/teacher/classroom/classroom.dart';
+import 'package:kkv/screens/teacher/classroom/classroom_binding.dart';
 
 import '../screens/teacher/add_timetable/add_timetable.dart';
 import '../screens/teacher/add_timetable/add_timetable_binding.dart';
 import '../screens/teacher/class_preview/class_preview.dart';
+import '../screens/teacher/class_preview/class_preview_binding.dart';
 import '../screens/teacher/create_class/create_class.dart';
 import '../screens/teacher/create_class/create_class_binding.dart';
 import '../screens/teacher/home/teacher_home.dart';
@@ -17,6 +20,7 @@ class TeacherRoutes {
   static const String CREATE_CLASS = "/create-class";
   static const String ADD_TIMETABLE = "/add-timetable";
   static const String CLASS_PREVIEW = "/class-preview";
+  static const String CLASS_ROOM = "/teacher/class-room";
 
   static final pages = [
     GetPage(
@@ -45,6 +49,11 @@ class TeacherRoutes {
       page: () => ClassPreview(),
       binding: ClassPreviewBinding(),
       fullscreenDialog: true,
+    ),
+    GetPage(
+      name: CLASS_ROOM,
+      page: () => Classroom(Get.arguments as ClassModel),
+      binding: ClassroomBinding(),
     ),
   ];
 }
