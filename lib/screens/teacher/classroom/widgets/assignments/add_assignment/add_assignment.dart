@@ -14,7 +14,8 @@ class AddAssignment extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<AddAssignmentController>(
       builder: (controller) => Scaffold(
-        body: Column(
+        body: ListView(
+          physics: BouncingScrollPhysics(),
           children: [
             Container(
               height: Get.height - 80,

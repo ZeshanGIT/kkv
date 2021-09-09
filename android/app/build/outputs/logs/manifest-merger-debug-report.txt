@@ -8,6 +8,8 @@ MERGED from /home/seshan/Desktop/KKV/kkv/android/app/src/main/AndroidManifest.xm
 MERGED from [:cloud_firestore] /home/seshan/Desktop/KKV/kkv/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-15:12
 MERGED from [:firebase_auth] /home/seshan/Desktop/KKV/kkv/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-15:12
 MERGED from [:firebase_core] /home/seshan/Desktop/KKV/kkv/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-15:12
+MERGED from [:file_picker] /home/seshan/Desktop/KKV/kkv/build/file_picker/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-17:12
+MERGED from [:flutter_plugin_android_lifecycle] /home/seshan/Desktop/KKV/kkv/build/flutter_plugin_android_lifecycle/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:shared_preferences] /home/seshan/Desktop/KKV/kkv/build/shared_preferences/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:sqflite] /home/seshan/Desktop/KKV/kkv/build/sqflite/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:path_provider] /home/seshan/Desktop/KKV/kkv/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
@@ -93,6 +95,8 @@ INJECTED from /home/seshan/Desktop/KKV/kkv/android/app/src/debug/AndroidManifest
 		ADDED from /home/seshan/Desktop/KKV/kkv/android/app/src/main/AndroidManifest.xml:1:11-69
 queries
 ADDED from /home/seshan/Desktop/KKV/kkv/android/app/src/main/AndroidManifest.xml:2:3-18:13
+MERGED from [:file_picker] /home/seshan/Desktop/KKV/kkv/build/file_picker/intermediates/library_manifest/debug/AndroidManifest.xml:9:5-15:15
+MERGED from [:file_picker] /home/seshan/Desktop/KKV/kkv/build/file_picker/intermediates/library_manifest/debug/AndroidManifest.xml:9:5-15:15
 intent#action:name:android.intent.action.VIEW+data:scheme:https
 ADDED from /home/seshan/Desktop/KKV/kkv/android/app/src/main/AndroidManifest.xml:4:5-7:14
 action#android.intent.action.VIEW
@@ -227,6 +231,10 @@ MERGED from [:firebase_auth] /home/seshan/Desktop/KKV/kkv/build/firebase_auth/in
 MERGED from [:firebase_auth] /home/seshan/Desktop/KKV/kkv/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:firebase_core] /home/seshan/Desktop/KKV/kkv/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:firebase_core] /home/seshan/Desktop/KKV/kkv/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:file_picker] /home/seshan/Desktop/KKV/kkv/build/file_picker/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:file_picker] /home/seshan/Desktop/KKV/kkv/build/file_picker/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:flutter_plugin_android_lifecycle] /home/seshan/Desktop/KKV/kkv/build/flutter_plugin_android_lifecycle/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:flutter_plugin_android_lifecycle] /home/seshan/Desktop/KKV/kkv/build/flutter_plugin_android_lifecycle/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:shared_preferences] /home/seshan/Desktop/KKV/kkv/build/shared_preferences/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:shared_preferences] /home/seshan/Desktop/KKV/kkv/build/shared_preferences/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:sqflite] /home/seshan/Desktop/KKV/kkv/build/sqflite/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
@@ -429,6 +437,16 @@ ADDED from [:firebase_core] /home/seshan/Desktop/KKV/kkv/build/firebase_core/int
 		ADDED from [:firebase_core] /home/seshan/Desktop/KKV/kkv/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
 	android:name
 		ADDED from [:firebase_core] /home/seshan/Desktop/KKV/kkv/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-124
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from [:file_picker] /home/seshan/Desktop/KKV/kkv/build/file_picker/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-80
+	android:name
+		ADDED from [:file_picker] /home/seshan/Desktop/KKV/kkv/build/file_picker/intermediates/library_manifest/debug/AndroidManifest.xml:7:22-77
+intent#action:name:android.intent.action.GET_CONTENT+data:mimeType:*/*
+ADDED from [:file_picker] /home/seshan/Desktop/KKV/kkv/build/file_picker/intermediates/library_manifest/debug/AndroidManifest.xml:10:9-14:18
+action#android.intent.action.GET_CONTENT
+ADDED from [:file_picker] /home/seshan/Desktop/KKV/kkv/build/file_picker/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-72
+	android:name
+		ADDED from [:file_picker] /home/seshan/Desktop/KKV/kkv/build/file_picker/intermediates/library_manifest/debug/AndroidManifest.xml:11:21-69
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from [:connectivity_plus] /home/seshan/Desktop/KKV/kkv/build/connectivity_plus/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-79
 MERGED from [com.google.firebase:firebase-auth:21.0.1] /home/seshan/.gradle/caches/transforms-2/files-2.1/cb85e813550ceb859d5d8655b705694f/jetified-firebase-auth-21.0.1/AndroidManifest.xml:24:5-79

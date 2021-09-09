@@ -1,6 +1,11 @@
+import 'package:clipboard/clipboard.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:jiffy/jiffy.dart';
+import 'package:kkv/common/constants.dart';
+import 'package:kkv/common/text_styles.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'attachment_type_bottom_sheet.dart';
 
@@ -36,13 +41,87 @@ class AddAssignmentController extends GetxController {
     dueDateController.clear();
   }
 
-  pickVideo() {}
-  pickDocument() {}
-  pickImage() async {
-    FilePickerResult? result = await FilePicker.platform.pickFiles();
+  pickVideo() async {
+    FilePickerResult? result = await FilePicker.platform.pickFiles(
+      type: FileType.video,
+      allowMultiple: true,
+    );
+    if (result == null) return;
+    result.files.forEach((f) => print(f.path));
+    Get.back();
   }
 
-  pickLink() {}
+  pickDocument() async {
+    FilePickerResult? result = await FilePicker.platform.pickFiles(
+      type: FileType.any,
+      allowMultiple: true,
+    );
+    if (result == null) return;
+    Get.back();
+    result.files.forEach((f) => print(f.path));
+  }
+
+  pickImage() async {
+    FilePickerResult? result = await FilePicker.platform.pickFiles(
+      type: FileType.image,
+      allowMultiple: true,
+    );
+    if (result == null) return;
+    Get.back();
+    result.files.forEach((f) => print(f.path));
+  }
+
+  final TextEditingController linkController = TextEditingController();
+
+  pickLink() async {
+    String clipContent = await FlutterClipboard.paste();
+    linkController.clear();
+    Get.dialog(
+      AlertDialog(
+        title: Text("Paste link here"),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            if (GetUtils.isURL(clipContent)) ...[
+              Container(
+                alignment: Alignment.centerLeft,
+                child: TextButton(
+                  onPressed: () => linkController.text = clipContent,
+                  child: Text("Paste from clipboard"),
+                ),
+              ),
+              Text(
+                clipContent,
+                style: SMALL_SUB_HEADING,
+                maxLines: 1,
+                overflow: TextOverflow.fade,
+              ).paddingOnly(left: 8)
+            ],
+            SIZED_BOX_16,
+            TextFormField(
+              controller: linkController,
+              autocorrect: false,
+              validator: (link) =>
+                  GetUtils.isURL(link ?? '') ? null : "Invalid URL",
+              autovalidateMode: AutovalidateMode.onUserInteraction,
+              decoration: InputDecoration(
+                hintText: "Link",
+                labelText: "Link",
+              ),
+            ),
+            SIZED_BOX_16,
+            OutlinedButton(
+              onPressed: Get.back,
+              child: Text(
+                "Submit",
+                style: SUB_HEADING,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 
   void addAttachments() {
     Get.bottomSheet(AttachmentTypeBottomSheet());
