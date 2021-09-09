@@ -20,7 +20,8 @@ class TeacherHomeController extends GetxController {
   List<ClassModel> classList = [];
 
   @override
-  onReady() async {
+  onReady() {
+    super.onReady();
     classList = _box.getClassList();
     update();
     print(classList);
@@ -64,6 +65,7 @@ class TeacherHomeController extends GetxController {
 
   Future<void> onRefresh() async {
     classList = await TeacherClassService.fetchClasses();
+    print(classList);
     update();
   }
 }

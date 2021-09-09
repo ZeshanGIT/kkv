@@ -13,37 +13,36 @@ import '../../../model/subject_card_theme.dart';
 import '../widgets/teacher_floating_drawer.dart';
 import 'teacher_home_controller.dart';
 
-class TeacherHomePage extends GetView<TeacherHomeController> {
+class TeacherHomePage extends StatelessWidget {
   const TeacherHomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      drawerScrimColor: Colors.black12,
-      key: controller.scaffoldKey,
-      drawer: TeacherFloatingDrawer(),
-      body: LiquidPullToRefresh(
-        onRefresh: controller.onRefresh,
-        child: ListView(
-          physics: BouncingScrollPhysics(),
-          children: [
-            TopBar(
-              leadingIcon: Icons.graphic_eq_rounded,
-              leadingAction: controller.openDrawer,
-              trailingIcon: Icons.notifications_none_rounded,
-            ),
-            SIZED_BOX_24,
-            Text(
-              "Hi, ${controller.user?.name ?? ''}",
-              style: const TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w600,
+    return GetBuilder<TeacherHomeController>(
+      builder: (controller) => Scaffold(
+        drawerScrimColor: Colors.black12,
+        key: controller.scaffoldKey,
+        drawer: TeacherFloatingDrawer(),
+        body: LiquidPullToRefresh(
+          onRefresh: controller.onRefresh,
+          color: Colors.black,
+          child: ListView(
+            children: [
+              TopBar(
+                leadingIcon: Icons.graphic_eq_rounded,
+                leadingAction: controller.openDrawer,
+                trailingIcon: Icons.notifications_none_rounded,
               ),
-            ).paddingAll(16),
-            if (controller.classList.isEmpty)
-              GestureDetector(
-                onTap: controller.onCreateClass,
-                child: Container(
+              SIZED_BOX_24,
+              Text(
+                "Hi, ${controller.user?.name ?? ''}",
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                ),
+              ).paddingAll(16),
+              if (controller.classList.isEmpty)
+                Container(
                   height: Get.height - 160,
                   alignment: Alignment.center,
                   child: Column(
@@ -56,33 +55,34 @@ class TeacherHomePage extends GetView<TeacherHomeController> {
                     ],
                   ),
                 ),
-              ),
-            if (controller.classList.isNotEmpty)
-              ...controller.classList
-                  .map(
-                    (c) => SubjectCard(
-                      classModel: c,
-                      subjectCardTheme: SubjectCardTheme.fromSubject(c.subject),
-                    ),
-                  )
-                  .toList(),
+              if (controller.classList.isNotEmpty)
+                ...controller.classList
+                    .map(
+                      (c) => SubjectCard(
+                        classModel: c,
+                        subjectCardTheme:
+                            SubjectCardTheme.fromSubject(c.subject),
+                      ),
+                    )
+                    .toList(),
 
-            // SubjectCard(
-            //   title: "Social",
-            //   darkColor: const Color(0xFFF48021),
-            //   lightColor: const Color(0xFFFBDBA9),
-            //   imgPath: MyAssets.Cat,
-            //   onTap: () {},
-            // ),
-            // SubjectCard(
-            //   title: "Mathematics",
-            //   darkColor: const Color(0xFF4F2A74),
-            //   lightColor: const Color(0xFFEDCFEA),
-            //   imgPath: MyAssets.Cat,
-            //   onTap: () {},
-            // ),
-          ],
-        ).paddingAll(16),
+              // SubjectCard(
+              //   title: "Social",
+              //   darkColor: const Color(0xFFF48021),
+              //   lightColor: const Color(0xFFFBDBA9),
+              //   imgPath: MyAssets.Cat,
+              //   onTap: () {},
+              // ),
+              // SubjectCard(
+              //   title: "Mathematics",
+              //   darkColor: const Color(0xFF4F2A74),
+              //   lightColor: const Color(0xFFEDCFEA),
+              //   imgPath: MyAssets.Cat,
+              //   onTap: () {},
+              // ),
+            ],
+          ).paddingAll(16),
+        ),
       ),
     );
   }

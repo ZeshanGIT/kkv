@@ -52,4 +52,9 @@ class ClassModel {
 
   factory ClassModel.fromJson(String source) =>
       ClassModel.fromMap(json.decode(source));
+
+  @override
+  String toString() {
+    return 'ClassModel(subject: $subject, grade: $grade, section: $section, description: $description, meetingLink: $meetingLink, docId: $docId, timetable: $timetable)';
+  }
 }

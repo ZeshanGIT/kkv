@@ -74,7 +74,7 @@ class SubjectCard extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      "IV - A",
+                      classModel.grade + " - " + classModel.section,
                       style: TextStyle(
                         color: subjectCardTheme.darkColor.withOpacity(0.7),
                         fontWeight: FontWeight.w600,
