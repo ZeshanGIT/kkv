@@ -3,6 +3,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:jiffy/jiffy.dart';
+import 'package:kkv/screens/teacher/classroom/widgets/assignments/add_assignment/link_picker.dart';
 
 import '../../../../../../common/constants.dart';
 import '../../../../../../common/text_styles.dart';
@@ -72,54 +73,13 @@ class AddAssignmentController extends GetxController {
 
   final TextEditingController linkController = TextEditingController();
 
+  bool isURL = false;
+
   pickLink() async {
     String clipContent = await FlutterClipboard.paste();
+    isURL = GetUtils.isURL(clipContent);
     linkController.clear();
-    Get.dialog(
-      AlertDialog(
-        title: Text("Paste link here"),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            if (GetUtils.isURL(clipContent)) ...[
-              Container(
-                alignment: Alignment.centerLeft,
-                child: TextButton(
-                  onPressed: () => linkController.text = clipContent,
-                  child: Text("Paste from clipboard"),
-                ),
-              ),
-              Text(
-                clipContent,
-                style: SMALL_SUB_HEADING,
-                maxLines: 1,
-                overflow: TextOverflow.fade,
-              ).paddingOnly(left: 8)
-            ],
-            SIZED_BOX_16,
-            TextFormField(
-              controller: linkController,
-              autocorrect: false,
-              validator: (link) =>
-                  GetUtils.isURL(link ?? '') ? null : "Invalid URL",
-              autovalidateMode: AutovalidateMode.onUserInteraction,
-              decoration: InputDecoration(
-                hintText: "Link",
-                labelText: "Link",
-              ),
-            ),
-            SIZED_BOX_16,
-            OutlinedButton(
-              onPressed: Get.back,
-              child: Text(
-                "Submit",
-                style: SUB_HEADING,
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
+    Get.dialog(LinkPicker());
   }
 
   void addAttachments() {
