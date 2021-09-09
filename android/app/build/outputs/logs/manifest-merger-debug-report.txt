@@ -1,10 +1,14 @@
 -- Merging decision tree log ---
+provider#androidx.core.content.FileProvider
+INJECTED from /home/seshan/Desktop/KKV/kkv/android/app/src/main/AndroidManifest.xml:40:5-42:16
+	android:authorities
+		INJECTED from /home/seshan/Desktop/KKV/kkv/android/app/src/main/AndroidManifest.xml
 manifest
-ADDED from /home/seshan/Desktop/KKV/kkv/android/app/src/main/AndroidManifest.xml:1:1-41:12
-INJECTED from /home/seshan/Desktop/KKV/kkv/android/app/src/main/AndroidManifest.xml:1:1-41:12
-INJECTED from /home/seshan/Desktop/KKV/kkv/android/app/src/main/AndroidManifest.xml:1:1-41:12
-INJECTED from /home/seshan/Desktop/KKV/kkv/android/app/src/main/AndroidManifest.xml:1:1-41:12
-MERGED from /home/seshan/Desktop/KKV/kkv/android/app/src/main/AndroidManifest.xml:1:1-41:12
+ADDED from /home/seshan/Desktop/KKV/kkv/android/app/src/main/AndroidManifest.xml:1:1-44:12
+INJECTED from /home/seshan/Desktop/KKV/kkv/android/app/src/main/AndroidManifest.xml:1:1-44:12
+INJECTED from /home/seshan/Desktop/KKV/kkv/android/app/src/main/AndroidManifest.xml:1:1-44:12
+INJECTED from /home/seshan/Desktop/KKV/kkv/android/app/src/main/AndroidManifest.xml:1:1-44:12
+MERGED from /home/seshan/Desktop/KKV/kkv/android/app/src/main/AndroidManifest.xml:1:1-44:12
 MERGED from [:cloud_firestore] /home/seshan/Desktop/KKV/kkv/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-15:12
 MERGED from [:firebase_auth] /home/seshan/Desktop/KKV/kkv/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-15:12
 MERGED from [:firebase_core] /home/seshan/Desktop/KKV/kkv/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-15:12
@@ -15,6 +19,7 @@ MERGED from [:sqflite] /home/seshan/Desktop/KKV/kkv/build/sqflite/intermediates/
 MERGED from [:path_provider] /home/seshan/Desktop/KKV/kkv/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:android_intent_plus] /home/seshan/Desktop/KKV/kkv/build/android_intent_plus/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:connectivity_plus] /home/seshan/Desktop/KKV/kkv/build/connectivity_plus/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:open_file] /home/seshan/Desktop/KKV/kkv/build/open_file/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-24:12
 MERGED from [:share_plus] /home/seshan/Desktop/KKV/kkv/build/share_plus/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-19:12
 MERGED from [:android_alarm_manager_plus] /home/seshan/Desktop/KKV/kkv/build/android_alarm_manager_plus/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:url_launcher] /home/seshan/Desktop/KKV/kkv/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-14:12
@@ -27,6 +32,7 @@ MERGED from [com.google.android.gms:play-services-measurement-api:19.0.1] /home/
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/2b298d710992f12b9e2e0e6710dea16b/jetified-firebase-auth-interop-20.0.0/AndroidManifest.xml:2:1-10:12
 MERGED from [com.google.firebase:firebase-installations:17.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/2b663374f2a3beef67e4fc09532fc190/jetified-firebase-installations-17.0.0/AndroidManifest.xml:2:1-24:12
 MERGED from [com.google.firebase:firebase-common:20.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/e8c12af64c0d197211b7d090cb61cdf8/jetified-firebase-common-20.0.0/AndroidManifest.xml:15:1-40:12
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/eea41f5a16d4c8369c0af76edd900d48/legacy-support-v4-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.appcompat:appcompat:1.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/bc68daddfcef12c0f038508869cd86eb/appcompat-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.gms:play-services-auth:16.0.1] /home/seshan/.gradle/caches/transforms-2/files-2.1/1da36f79a09cabd24fbfa2bc43812489/jetified-play-services-auth-16.0.1/AndroidManifest.xml:17:1-39:12
 MERGED from [com.google.firebase:firebase-database-collection:18.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/369c59889e801cc817dee2786a28ea2c/jetified-firebase-database-collection-18.0.0/AndroidManifest.xml:2:1-9:12
@@ -47,6 +53,7 @@ MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] /home/se
 MERGED from [com.google.android.gms:play-services-basement:17.1.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/14e561dfe998324f0993f7eed2935f20/jetified-play-services-basement-17.1.0/AndroidManifest.xml:17:1-28:12
 MERGED from [androidx.fragment:fragment:1.1.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/4ead4a41cc8b337b790d86429dcc7418/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.browser:browser:1.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/afd2d987ef6a954ce95af3f20bd0f6cf/browser-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media:media:1.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/7f928a994fd94f3ba8ca4ad9f4c71475/media-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/ca6338d80704e34353a6f6054921fc70/vectordrawable-animated-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/4e927d6984655c107bd05d46c5b4dbb8/legacy-support-core-ui-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/b501a4de79069b6f0f7e19e89b9b1dda/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
@@ -80,16 +87,19 @@ INJECTED from /home/seshan/Desktop/KKV/kkv/android/app/src/debug/AndroidManifest
 INJECTED from /home/seshan/Desktop/KKV/kkv/android/app/src/debug/AndroidManifest.xml:1:1-7:12
 INJECTED from /home/seshan/Desktop/KKV/kkv/android/app/src/debug/AndroidManifest.xml:1:1-7:12
 	package
-		ADDED from /home/seshan/Desktop/KKV/kkv/android/app/src/main/AndroidManifest.xml:1:70-95
+		ADDED from /home/seshan/Desktop/KKV/kkv/android/app/src/main/AndroidManifest.xml:1:117-142
 		INJECTED from /home/seshan/Desktop/KKV/kkv/android/app/src/main/AndroidManifest.xml
 		INJECTED from /home/seshan/Desktop/KKV/kkv/android/app/src/debug/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/seshan/Desktop/KKV/kkv/android/app/src/main/AndroidManifest.xml
-		ADDED from /home/seshan/Desktop/KKV/kkv/android/app/src/main/AndroidManifest.xml:1:1-41:12
+		ADDED from /home/seshan/Desktop/KKV/kkv/android/app/src/main/AndroidManifest.xml:1:1-44:12
 		INJECTED from /home/seshan/Desktop/KKV/kkv/android/app/src/debug/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /home/seshan/Desktop/KKV/kkv/android/app/src/main/AndroidManifest.xml:1:70-116
+		ADDED from /home/seshan/Desktop/KKV/kkv/android/app/src/main/AndroidManifest.xml:1:70-116
 	android:versionCode
 		INJECTED from /home/seshan/Desktop/KKV/kkv/android/app/src/main/AndroidManifest.xml
-		ADDED from /home/seshan/Desktop/KKV/kkv/android/app/src/main/AndroidManifest.xml:1:1-41:12
+		ADDED from /home/seshan/Desktop/KKV/kkv/android/app/src/main/AndroidManifest.xml:1:1-44:12
 		INJECTED from /home/seshan/Desktop/KKV/kkv/android/app/src/debug/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/seshan/Desktop/KKV/kkv/android/app/src/main/AndroidManifest.xml:1:11-69
@@ -120,13 +130,15 @@ ADDED from /home/seshan/Desktop/KKV/kkv/android/app/src/main/AndroidManifest.xml
 	android:name
 		ADDED from /home/seshan/Desktop/KKV/kkv/android/app/src/main/AndroidManifest.xml:15:15-56
 application
-ADDED from /home/seshan/Desktop/KKV/kkv/android/app/src/main/AndroidManifest.xml:19:3-40:17
+ADDED from /home/seshan/Desktop/KKV/kkv/android/app/src/main/AndroidManifest.xml:19:3-43:17
 MERGED from [:cloud_firestore] /home/seshan/Desktop/KKV/kkv/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-13:19
 MERGED from [:cloud_firestore] /home/seshan/Desktop/KKV/kkv/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-13:19
 MERGED from [:firebase_auth] /home/seshan/Desktop/KKV/kkv/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-13:19
 MERGED from [:firebase_auth] /home/seshan/Desktop/KKV/kkv/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-13:19
 MERGED from [:firebase_core] /home/seshan/Desktop/KKV/kkv/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-13:19
 MERGED from [:firebase_core] /home/seshan/Desktop/KKV/kkv/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-13:19
+MERGED from [:open_file] /home/seshan/Desktop/KKV/kkv/build/open_file/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-22:19
+MERGED from [:open_file] /home/seshan/Desktop/KKV/kkv/build/open_file/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-22:19
 MERGED from [:share_plus] /home/seshan/Desktop/KKV/kkv/build/share_plus/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-17:19
 MERGED from [:share_plus] /home/seshan/Desktop/KKV/kkv/build/share_plus/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-17:19
 MERGED from [:url_launcher] /home/seshan/Desktop/KKV/kkv/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-12:19
@@ -245,6 +257,8 @@ MERGED from [:android_intent_plus] /home/seshan/Desktop/KKV/kkv/build/android_in
 MERGED from [:android_intent_plus] /home/seshan/Desktop/KKV/kkv/build/android_intent_plus/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:connectivity_plus] /home/seshan/Desktop/KKV/kkv/build/connectivity_plus/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:connectivity_plus] /home/seshan/Desktop/KKV/kkv/build/connectivity_plus/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:open_file] /home/seshan/Desktop/KKV/kkv/build/open_file/intermediates/library_manifest/debug/AndroidManifest.xml:6:5-44
+MERGED from [:open_file] /home/seshan/Desktop/KKV/kkv/build/open_file/intermediates/library_manifest/debug/AndroidManifest.xml:6:5-44
 MERGED from [:share_plus] /home/seshan/Desktop/KKV/kkv/build/share_plus/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:share_plus] /home/seshan/Desktop/KKV/kkv/build/share_plus/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:android_alarm_manager_plus] /home/seshan/Desktop/KKV/kkv/build/android_alarm_manager_plus/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
@@ -269,6 +283,8 @@ MERGED from [com.google.firebase:firebase-installations:17.0.0] /home/seshan/.gr
 MERGED from [com.google.firebase:firebase-installations:17.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/2b663374f2a3beef67e4fc09532fc190/jetified-firebase-installations-17.0.0/AndroidManifest.xml:6:5-8:41
 MERGED from [com.google.firebase:firebase-common:20.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/e8c12af64c0d197211b7d090cb61cdf8/jetified-firebase-common-20.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.firebase:firebase-common:20.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/e8c12af64c0d197211b7d090cb61cdf8/jetified-firebase-common-20.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/eea41f5a16d4c8369c0af76edd900d48/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/eea41f5a16d4c8369c0af76edd900d48/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/bc68daddfcef12c0f038508869cd86eb/appcompat-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/bc68daddfcef12c0f038508869cd86eb/appcompat-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-auth:16.0.1] /home/seshan/.gradle/caches/transforms-2/files-2.1/1da36f79a09cabd24fbfa2bc43812489/jetified-play-services-auth-16.0.1/AndroidManifest.xml:20:5-44
@@ -309,6 +325,8 @@ MERGED from [androidx.fragment:fragment:1.1.0] /home/seshan/.gradle/caches/trans
 MERGED from [androidx.fragment:fragment:1.1.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/4ead4a41cc8b337b790d86429dcc7418/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.browser:browser:1.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/afd2d987ef6a954ce95af3f20bd0f6cf/browser-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.browser:browser:1.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/afd2d987ef6a954ce95af3f20bd0f6cf/browser-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/7f928a994fd94f3ba8ca4ad9f4c71475/media-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/7f928a994fd94f3ba8ca4ad9f4c71475/media-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/ca6338d80704e34353a6f6054921fc70/vectordrawable-animated-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/ca6338d80704e34353a6f6054921fc70/vectordrawable-animated-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/4e927d6984655c107bd05d46c5b4dbb8/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
@@ -439,6 +457,8 @@ ADDED from [:firebase_core] /home/seshan/Desktop/KKV/kkv/build/firebase_core/int
 		ADDED from [:firebase_core] /home/seshan/Desktop/KKV/kkv/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-124
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
 ADDED from [:file_picker] /home/seshan/Desktop/KKV/kkv/build/file_picker/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-80
+MERGED from [:open_file] /home/seshan/Desktop/KKV/kkv/build/open_file/intermediates/library_manifest/debug/AndroidManifest.xml:9:5-80
+MERGED from [:open_file] /home/seshan/Desktop/KKV/kkv/build/open_file/intermediates/library_manifest/debug/AndroidManifest.xml:9:5-80
 	android:name
 		ADDED from [:file_picker] /home/seshan/Desktop/KKV/kkv/build/file_picker/intermediates/library_manifest/debug/AndroidManifest.xml:7:22-77
 intent#action:name:android.intent.action.GET_CONTENT+data:mimeType:*/*
@@ -467,6 +487,28 @@ MERGED from [io.grpc:grpc-android:1.28.0] /home/seshan/.gradle/caches/transforms
 MERGED from [io.grpc:grpc-android:1.28.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/28fc14dd71318110837ca9c868d23487/jetified-grpc-android-1.28.0/AndroidManifest.xml:11:5-79
 	android:name
 		ADDED from [:connectivity_plus] /home/seshan/Desktop/KKV/kkv/build/connectivity_plus/intermediates/library_manifest/debug/AndroidManifest.xml:7:22-76
+uses-permission#android.permission.REQUEST_INSTALL_PACKAGES
+ADDED from [:open_file] /home/seshan/Desktop/KKV/kkv/build/open_file/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-83
+	android:name
+		ADDED from [:open_file] /home/seshan/Desktop/KKV/kkv/build/open_file/intermediates/library_manifest/debug/AndroidManifest.xml:8:22-80
+provider#com.crazecoder.openfile.FileProvider
+ADDED from [:open_file] /home/seshan/Desktop/KKV/kkv/build/open_file/intermediates/library_manifest/debug/AndroidManifest.xml:12:9-21:20
+	android:grantUriPermissions
+		ADDED from [:open_file] /home/seshan/Desktop/KKV/kkv/build/open_file/intermediates/library_manifest/debug/AndroidManifest.xml:16:13-47
+	android:authorities
+		ADDED from [:open_file] /home/seshan/Desktop/KKV/kkv/build/open_file/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-88
+	android:exported
+		ADDED from [:open_file] /home/seshan/Desktop/KKV/kkv/build/open_file/intermediates/library_manifest/debug/AndroidManifest.xml:15:13-37
+	tools:replace
+		ADDED from [:open_file] /home/seshan/Desktop/KKV/kkv/build/open_file/intermediates/library_manifest/debug/AndroidManifest.xml:17:13-48
+	android:name
+		ADDED from [:open_file] /home/seshan/Desktop/KKV/kkv/build/open_file/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-64
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from [:open_file] /home/seshan/Desktop/KKV/kkv/build/open_file/intermediates/library_manifest/debug/AndroidManifest.xml:18:13-20:53
+	android:resource
+		ADDED from [:open_file] /home/seshan/Desktop/KKV/kkv/build/open_file/intermediates/library_manifest/debug/AndroidManifest.xml:20:17-50
+	android:name
+		ADDED from [:open_file] /home/seshan/Desktop/KKV/kkv/build/open_file/intermediates/library_manifest/debug/AndroidManifest.xml:19:17-67
 provider#dev.fluttercommunity.plus.share.ShareFileProvider
 ADDED from [:share_plus] /home/seshan/Desktop/KKV/kkv/build/share_plus/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-16:20
 	android:grantUriPermissions
@@ -477,12 +519,6 @@ ADDED from [:share_plus] /home/seshan/Desktop/KKV/kkv/build/share_plus/intermedi
 		ADDED from [:share_plus] /home/seshan/Desktop/KKV/kkv/build/share_plus/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-37
 	android:name
 		ADDED from [:share_plus] /home/seshan/Desktop/KKV/kkv/build/share_plus/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-77
-meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from [:share_plus] /home/seshan/Desktop/KKV/kkv/build/share_plus/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-15:68
-	android:resource
-		ADDED from [:share_plus] /home/seshan/Desktop/KKV/kkv/build/share_plus/intermediates/library_manifest/debug/AndroidManifest.xml:15:17-65
-	android:name
-		ADDED from [:share_plus] /home/seshan/Desktop/KKV/kkv/build/share_plus/intermediates/library_manifest/debug/AndroidManifest.xml:14:17-67
 activity#io.flutter.plugins.urllauncher.WebViewActivity
 ADDED from [:url_launcher] /home/seshan/Desktop/KKV/kkv/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-11:74
 	android:exported

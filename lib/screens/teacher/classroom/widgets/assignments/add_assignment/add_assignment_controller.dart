@@ -3,10 +3,9 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:jiffy/jiffy.dart';
-import 'package:kkv/common/constants.dart';
-import 'package:kkv/common/text_styles.dart';
-import 'package:url_launcher/url_launcher.dart';
 
+import '../../../../../../common/constants.dart';
+import '../../../../../../common/text_styles.dart';
 import 'attachment_type_bottom_sheet.dart';
 
 class AddAssignmentController extends GetxController {

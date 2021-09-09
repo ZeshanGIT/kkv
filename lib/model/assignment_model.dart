@@ -1,32 +1,6 @@
 import 'dart:convert';
 
-class AttachmentModel {
-  String link;
-  String title;
-  AttachmentModel({
-    required this.link,
-    required this.title,
-  });
-
-  Map<String, dynamic> toMap() {
-    return {
-      'link': link,
-      'title': title,
-    };
-  }
-
-  factory AttachmentModel.fromMap(Map<String, dynamic> map) {
-    return AttachmentModel(
-      link: map['link'],
-      title: map['title'],
-    );
-  }
-
-  String toJson() => json.encode(toMap());
-
-  factory AttachmentModel.fromJson(String source) =>
-      AttachmentModel.fromMap(json.decode(source));
-}
+import 'attachment_model.dart';
 
 class AssignmentModel {
   String docId;
