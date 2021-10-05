@@ -1,6 +1,5 @@
 import 'package:get/get.dart';
 
-import '../model/class_model.dart';
 import '../screens/teacher/add_timetable/add_timetable.dart';
 import '../screens/teacher/add_timetable/add_timetable_binding.dart';
 import '../screens/teacher/class_preview/class_preview.dart';
@@ -55,7 +54,7 @@ class TeacherRoutes {
     ),
     GetPage(
       name: CLASS_ROOM,
-      page: () => Classroom(Get.arguments as ClassModel),
+      page: () => Classroom(),
       binding: ClassroomBinding(),
     ),
     GetPage(

@@ -1,25 +1,42 @@
 import 'package:clipboard/clipboard.dart';
 import 'package:file_picker/file_picker.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:jiffy/jiffy.dart';
-import 'package:kkv/screens/teacher/classroom/widgets/assignments/add_assignment/link_picker.dart';
+import 'package:kkv/services/assignment_service.dart';
 
-import '../../../../../../common/constants.dart';
-import '../../../../../../common/text_styles.dart';
+import '../../../../../../model/attachment_model.dart';
 import 'attachment_type_bottom_sheet.dart';
+import 'link_picker.dart';
 
 class AddAssignmentController extends GetxController {
   TextEditingController dueDateController = TextEditingController();
+  String title = "";
+  String desc = "";
+  DateTime? dueDate;
+
+  List<AttachmentModel> attachments = [];
+  FirebaseStorage storage = FirebaseStorage.instance;
+
+  addAttachment(AttachmentModel attachmentModel) {
+    attachments.add(attachmentModel);
+    update();
+  }
+
+  removeAttachment(AttachmentModel attachmentModel) {
+    attachments.remove(attachmentModel);
+    update();
+  }
 
   pickDueDate() async {
-    DateTime? dueDate = await showDatePicker(
+    DateTime? _dueDate = await showDatePicker(
       context: Get.context!,
       initialDate: DateTime.now(),
       firstDate: DateTime.now(),
       lastDate: DateTime.now().add(365.days),
     );
-    if (dueDate == null) return;
+    if (_dueDate == null) return;
     TimeOfDay? timeOfDay = await showTimePicker(
         context: Get.context!,
         initialTime: TimeOfDay(
@@ -27,18 +44,15 @@ class AddAssignmentController extends GetxController {
           minute: 59,
         ));
     if (timeOfDay == null) return;
-    dueDate = DateTime.utc(dueDate.year, dueDate.month, dueDate.day,
+    _dueDate = DateTime.utc(_dueDate.year, _dueDate.month, _dueDate.day,
         timeOfDay.hour, timeOfDay.minute);
-    dueDateController.text = Jiffy(dueDate).fromNow();
+    dueDate = _dueDate;
+    dueDateController.text = Jiffy(dueDate).yMMMMEEEEdjm;
+    update();
   }
 
   focusNext() {
     Get.focusScope?.nextFocus();
-  }
-
-  closeAssignmentSheet() {
-    Get.back();
-    dueDateController.clear();
   }
 
   pickVideo() async {
@@ -47,7 +61,11 @@ class AddAssignmentController extends GetxController {
       allowMultiple: true,
     );
     if (result == null) return;
-    result.files.forEach((f) => print(f.path));
+    result.files.forEach(
+      (f) => addAttachment(
+        AttachmentModel(title: f.name, type: AttachmentModel.VIDEO, file: f),
+      ),
+    );
     Get.back();
   }
 
@@ -57,8 +75,12 @@ class AddAssignmentController extends GetxController {
       allowMultiple: true,
     );
     if (result == null) return;
+    result.files.forEach(
+      (f) => addAttachment(
+        AttachmentModel(title: f.name, type: AttachmentModel.DOCUMENT, file: f),
+      ),
+    );
     Get.back();
-    result.files.forEach((f) => print(f.path));
   }
 
   pickImage() async {
@@ -67,8 +89,16 @@ class AddAssignmentController extends GetxController {
       allowMultiple: true,
     );
     if (result == null) return;
+    result.files.forEach(
+      (f) => addAttachment(
+        AttachmentModel(
+          title: f.name,
+          type: AttachmentModel.IMAGE,
+          file: f,
+        ),
+      ),
+    );
     Get.back();
-    result.files.forEach((f) => print(f.path));
   }
 
   final TextEditingController linkController = TextEditingController();
@@ -82,7 +112,25 @@ class AddAssignmentController extends GetxController {
     Get.dialog(LinkPicker());
   }
 
-  void addAttachments() {
+  void openAttachmentBottomSheet() {
     Get.bottomSheet(AttachmentTypeBottomSheet());
   }
+
+  onTitleChanged(String _title) {
+    title = _title;
+    update();
+  }
+
+  onDescChanged(String _desc) {
+    desc = _desc;
+    update();
+  }
+
+  _onSubmit() {
+    AssignmentService().addAssignment(title, desc, attachments, dueDate!);
+  }
+
+  Function()? get onSubmit => isValid ? _onSubmit : null;
+
+  bool get isValid => title != "" && dueDate != null;
 }

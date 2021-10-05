@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
+import 'package:kkv/model/class_model.dart';
+import 'package:kkv/model/subject_card_theme.dart';
 
 import '../../../model/assignment_model.dart';
 import '../../../router/teacher_routes.dart';
@@ -8,10 +10,15 @@ import '../../../services/assignment_service.dart';
 
 class ClassroomController extends GetxController
     with SingleGetTickerProviderMixin {
+  final ClassModel classModel = Get.arguments;
+  final SubjectCardTheme subjectCardTheme =
+      SubjectCardTheme.fromSubject((Get.arguments as ClassModel).subject);
+
   final PagingController<int, AssignmentModel> pagingController =
       PagingController(firstPageKey: 0);
 
   late final TabController tabController;
+  late final PageController pageController;
   static const _pageSize = 5;
   static const FEED = "Feed";
   static const ASSIGNMENT = "Assignment";
@@ -22,12 +29,22 @@ class ClassroomController extends GetxController
   onInit() {
     tabController = TabController(length: 3, vsync: this);
     tabController.addListener(() {
+      pageController.animateToPage(
+        tabController.index,
+        duration: 500.milliseconds,
+        curve: Curves.easeInOut,
+      );
       if (tabController.index == 2) {
         fabLabel = null;
       } else {
         fabLabel = tabController.index == 0 ? FEED : ASSIGNMENT;
       }
       update();
+    });
+
+    pageController = PageController();
+    pageController.addListener(() {
+      tabController.animateTo(pageController.page!.round());
     });
     super.onInit();
   }

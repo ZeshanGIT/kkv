@@ -27,7 +27,6 @@ class TeacherHomePage extends StatelessWidget {
           onRefresh: controller.onRefresh,
           color: Colors.black,
           child: ListView(
-            physics: BouncingScrollPhysics(),
             children: [
               TopBar(
                 leadingIcon: Icons.graphic_eq_rounded,

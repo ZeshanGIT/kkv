@@ -29,6 +29,7 @@ class ClassModel {
       'section': section,
       'description': description,
       'meetingLink': meetingLink,
+      'classId': classId,
       'timetable': timetable.map((x) => x.toMap()).toList(),
     };
   }

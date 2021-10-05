@@ -1,25 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:kkv/screens/teacher/classroom/classroom_controller.dart';
 
 import '../../../../common/constants.dart';
-import '../../../../model/class_model.dart';
-import '../../../../model/subject_card_theme.dart';
 import '../../../../utilities/extensions/text_hero_transparent.dart';
 
-class ClassroomTopBar extends StatelessWidget {
-  final SubjectCardTheme subjectCardTheme;
-  final ClassModel classModel;
+class ClassroomTopBar extends GetView<ClassroomController> {
   const ClassroomTopBar({
     Key? key,
-    required this.subjectCardTheme,
-    required this.classModel,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: subjectCardTheme.lightColor,
+      color: controller.subjectCardTheme.lightColor,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -27,7 +22,7 @@ class ClassroomTopBar extends StatelessWidget {
             onPressed: Get.back,
             icon: Icon(
               Icons.chevron_left_rounded,
-              color: subjectCardTheme.darkColor,
+              color: controller.subjectCardTheme.darkColor,
             ),
           ),
           Row(
@@ -36,24 +31,27 @@ class ClassroomTopBar extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    classModel.subject,
+                    controller.classModel.subject,
                     style: SUBJECT_TITLE_STYLE.copyWith(
-                      color: subjectCardTheme.darkColor,
+                      color: controller.subjectCardTheme.darkColor,
                     ),
-                  ).hero(classModel.classId + '-title'),
+                  ).hero(controller.classModel.classId + '-title'),
                   Text(
-                    classModel.grade + " - " + classModel.section,
+                    controller.classModel.grade +
+                        " - " +
+                        controller.classModel.section,
                     style: SUBJECT_SUB_HEADING_STYLE.copyWith(
-                      color: subjectCardTheme.darkColor.withOpacity(0.7),
+                      color: controller.subjectCardTheme.darkColor
+                          .withOpacity(0.7),
                     ),
-                  ).hero(classModel.classId + "-grade-sec"),
+                  ).hero(controller.classModel.classId + "-grade-sec"),
                   SIZED_BOX_8,
                   SizedBox(
                     width: Get.width * 0.5,
                     child: Text(
                       "Elit sint sint id mollit esse ad pariatur aute.",
                       style: SUBJECT_DESC_STYLE.copyWith(
-                        color: subjectCardTheme.darkColor,
+                        color: controller.subjectCardTheme.darkColor,
                       ),
                     ),
                   ),
@@ -61,9 +59,9 @@ class ClassroomTopBar extends StatelessWidget {
               ),
               Spacer(),
               Hero(
-                tag: classModel.classId + '-img',
+                tag: controller.classModel.classId + '-img',
                 child: SvgPicture.asset(
-                  subjectCardTheme.img,
+                  controller.subjectCardTheme.img,
                   height: Get.width * 0.2,
                 ),
               )

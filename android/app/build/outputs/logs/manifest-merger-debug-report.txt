@@ -11,6 +11,7 @@ INJECTED from /home/seshan/Desktop/KKV/kkv/android/app/src/main/AndroidManifest.
 MERGED from /home/seshan/Desktop/KKV/kkv/android/app/src/main/AndroidManifest.xml:1:1-44:12
 MERGED from [:cloud_firestore] /home/seshan/Desktop/KKV/kkv/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-15:12
 MERGED from [:firebase_auth] /home/seshan/Desktop/KKV/kkv/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-15:12
+MERGED from [:firebase_storage] /home/seshan/Desktop/KKV/kkv/build/firebase_storage/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-15:12
 MERGED from [:firebase_core] /home/seshan/Desktop/KKV/kkv/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-15:12
 MERGED from [:file_picker] /home/seshan/Desktop/KKV/kkv/build/file_picker/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-17:12
 MERGED from [:flutter_plugin_android_lifecycle] /home/seshan/Desktop/KKV/kkv/build/flutter_plugin_android_lifecycle/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
@@ -28,8 +29,10 @@ MERGED from [androidx.multidex:multidex:2.0.0] /home/seshan/.gradle/caches/trans
 MERGED from [com.google.firebase:firebase-analytics:19.0.1] /home/seshan/.gradle/caches/transforms-2/files-2.1/62b274eb1d5a61beb89e504ac46b32e2/jetified-firebase-analytics-19.0.1/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-auth:21.0.1] /home/seshan/.gradle/caches/transforms-2/files-2.1/cb85e813550ceb859d5d8655b705694f/jetified-firebase-auth-21.0.1/AndroidManifest.xml:17:1-83:12
 MERGED from [com.google.firebase:firebase-firestore:23.0.3] /home/seshan/.gradle/caches/transforms-2/files-2.1/e4186c293950d73169b2437483bf0308/jetified-firebase-firestore-23.0.3/AndroidManifest.xml:2:1-26:12
+MERGED from [com.google.firebase:firebase-storage:20.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/aac17191751d9819c4ba4efa4c4713d8/jetified-firebase-storage-20.0.0/AndroidManifest.xml:15:1-39:12
 MERGED from [com.google.android.gms:play-services-measurement-api:19.0.1] /home/seshan/.gradle/caches/transforms-2/files-2.1/d3490d9d81ebe2d7174eb29e4a32f867/jetified-play-services-measurement-api-19.0.1/AndroidManifest.xml:17:1-36:12
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/2b298d710992f12b9e2e0e6710dea16b/jetified-firebase-auth-interop-20.0.0/AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.firebase:firebase-appcheck-interop:16.0.0-beta01] /home/seshan/.gradle/caches/transforms-2/files-2.1/d34d9350df2225efcfe3c865437cd9cd/jetified-firebase-appcheck-interop-16.0.0-beta01/AndroidManifest.xml:15:1-26:12
 MERGED from [com.google.firebase:firebase-installations:17.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/2b663374f2a3beef67e4fc09532fc190/jetified-firebase-installations-17.0.0/AndroidManifest.xml:2:1-24:12
 MERGED from [com.google.firebase:firebase-common:20.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/e8c12af64c0d197211b7d090cb61cdf8/jetified-firebase-common-20.0.0/AndroidManifest.xml:15:1-40:12
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/eea41f5a16d4c8369c0af76edd900d48/legacy-support-v4-1.0.0/AndroidManifest.xml:17:1-22:12
@@ -135,6 +138,8 @@ MERGED from [:cloud_firestore] /home/seshan/Desktop/KKV/kkv/build/cloud_firestor
 MERGED from [:cloud_firestore] /home/seshan/Desktop/KKV/kkv/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-13:19
 MERGED from [:firebase_auth] /home/seshan/Desktop/KKV/kkv/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-13:19
 MERGED from [:firebase_auth] /home/seshan/Desktop/KKV/kkv/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-13:19
+MERGED from [:firebase_storage] /home/seshan/Desktop/KKV/kkv/build/firebase_storage/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-13:19
+MERGED from [:firebase_storage] /home/seshan/Desktop/KKV/kkv/build/firebase_storage/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-13:19
 MERGED from [:firebase_core] /home/seshan/Desktop/KKV/kkv/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-13:19
 MERGED from [:firebase_core] /home/seshan/Desktop/KKV/kkv/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-13:19
 MERGED from [:open_file] /home/seshan/Desktop/KKV/kkv/build/open_file/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-22:19
@@ -149,10 +154,14 @@ MERGED from [com.google.firebase:firebase-auth:21.0.1] /home/seshan/.gradle/cach
 MERGED from [com.google.firebase:firebase-auth:21.0.1] /home/seshan/.gradle/caches/transforms-2/files-2.1/cb85e813550ceb859d5d8655b705694f/jetified-firebase-auth-21.0.1/AndroidManifest.xml:26:5-81:19
 MERGED from [com.google.firebase:firebase-firestore:23.0.3] /home/seshan/.gradle/caches/transforms-2/files-2.1/e4186c293950d73169b2437483bf0308/jetified-firebase-firestore-23.0.3/AndroidManifest.xml:16:5-24:19
 MERGED from [com.google.firebase:firebase-firestore:23.0.3] /home/seshan/.gradle/caches/transforms-2/files-2.1/e4186c293950d73169b2437483bf0308/jetified-firebase-firestore-23.0.3/AndroidManifest.xml:16:5-24:19
+MERGED from [com.google.firebase:firebase-storage:20.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/aac17191751d9819c4ba4efa4c4713d8/jetified-firebase-storage-20.0.0/AndroidManifest.xml:29:5-37:19
+MERGED from [com.google.firebase:firebase-storage:20.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/aac17191751d9819c4ba4efa4c4713d8/jetified-firebase-storage-20.0.0/AndroidManifest.xml:29:5-37:19
 MERGED from [com.google.android.gms:play-services-measurement-api:19.0.1] /home/seshan/.gradle/caches/transforms-2/files-2.1/d3490d9d81ebe2d7174eb29e4a32f867/jetified-play-services-measurement-api-19.0.1/AndroidManifest.xml:26:5-34:19
 MERGED from [com.google.android.gms:play-services-measurement-api:19.0.1] /home/seshan/.gradle/caches/transforms-2/files-2.1/d3490d9d81ebe2d7174eb29e4a32f867/jetified-play-services-measurement-api-19.0.1/AndroidManifest.xml:26:5-34:19
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/2b298d710992f12b9e2e0e6710dea16b/jetified-firebase-auth-interop-20.0.0/AndroidManifest.xml:7:5-8:19
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/2b298d710992f12b9e2e0e6710dea16b/jetified-firebase-auth-interop-20.0.0/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-appcheck-interop:16.0.0-beta01] /home/seshan/.gradle/caches/transforms-2/files-2.1/d34d9350df2225efcfe3c865437cd9cd/jetified-firebase-appcheck-interop-16.0.0-beta01/AndroidManifest.xml:24:5-20
+MERGED from [com.google.firebase:firebase-appcheck-interop:16.0.0-beta01] /home/seshan/.gradle/caches/transforms-2/files-2.1/d34d9350df2225efcfe3c865437cd9cd/jetified-firebase-appcheck-interop-16.0.0-beta01/AndroidManifest.xml:24:5-20
 MERGED from [com.google.firebase:firebase-installations:17.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/2b663374f2a3beef67e4fc09532fc190/jetified-firebase-installations-17.0.0/AndroidManifest.xml:14:5-22:19
 MERGED from [com.google.firebase:firebase-installations:17.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/2b663374f2a3beef67e4fc09532fc190/jetified-firebase-installations-17.0.0/AndroidManifest.xml:14:5-22:19
 MERGED from [com.google.firebase:firebase-common:20.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/e8c12af64c0d197211b7d090cb61cdf8/jetified-firebase-common-20.0.0/AndroidManifest.xml:25:5-38:19
@@ -241,6 +250,8 @@ MERGED from [:cloud_firestore] /home/seshan/Desktop/KKV/kkv/build/cloud_firestor
 MERGED from [:cloud_firestore] /home/seshan/Desktop/KKV/kkv/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:firebase_auth] /home/seshan/Desktop/KKV/kkv/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:firebase_auth] /home/seshan/Desktop/KKV/kkv/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:firebase_storage] /home/seshan/Desktop/KKV/kkv/build/firebase_storage/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:firebase_storage] /home/seshan/Desktop/KKV/kkv/build/firebase_storage/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:firebase_core] /home/seshan/Desktop/KKV/kkv/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:firebase_core] /home/seshan/Desktop/KKV/kkv/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:file_picker] /home/seshan/Desktop/KKV/kkv/build/file_picker/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
@@ -275,10 +286,14 @@ MERGED from [com.google.firebase:firebase-auth:21.0.1] /home/seshan/.gradle/cach
 MERGED from [com.google.firebase:firebase-auth:21.0.1] /home/seshan/.gradle/caches/transforms-2/files-2.1/cb85e813550ceb859d5d8655b705694f/jetified-firebase-auth-21.0.1/AndroidManifest.xml:21:5-44
 MERGED from [com.google.firebase:firebase-firestore:23.0.3] /home/seshan/.gradle/caches/transforms-2/files-2.1/e4186c293950d73169b2437483bf0308/jetified-firebase-firestore-23.0.3/AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.firebase:firebase-firestore:23.0.3] /home/seshan/.gradle/caches/transforms-2/files-2.1/e4186c293950d73169b2437483bf0308/jetified-firebase-firestore-23.0.3/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.firebase:firebase-storage:20.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/aac17191751d9819c4ba4efa4c4713d8/jetified-firebase-storage-20.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-storage:20.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/aac17191751d9819c4ba4efa4c4713d8/jetified-firebase-storage-20.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.gms:play-services-measurement-api:19.0.1] /home/seshan/.gradle/caches/transforms-2/files-2.1/d3490d9d81ebe2d7174eb29e4a32f867/jetified-play-services-measurement-api-19.0.1/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-measurement-api:19.0.1] /home/seshan/.gradle/caches/transforms-2/files-2.1/d3490d9d81ebe2d7174eb29e4a32f867/jetified-play-services-measurement-api-19.0.1/AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/2b298d710992f12b9e2e0e6710dea16b/jetified-firebase-auth-interop-20.0.0/AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/2b298d710992f12b9e2e0e6710dea16b/jetified-firebase-auth-interop-20.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-appcheck-interop:16.0.0-beta01] /home/seshan/.gradle/caches/transforms-2/files-2.1/d34d9350df2225efcfe3c865437cd9cd/jetified-firebase-appcheck-interop-16.0.0-beta01/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-appcheck-interop:16.0.0-beta01] /home/seshan/.gradle/caches/transforms-2/files-2.1/d34d9350df2225efcfe3c865437cd9cd/jetified-firebase-appcheck-interop-16.0.0-beta01/AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.firebase:firebase-installations:17.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/2b663374f2a3beef67e4fc09532fc190/jetified-firebase-installations-17.0.0/AndroidManifest.xml:6:5-8:41
 MERGED from [com.google.firebase:firebase-installations:17.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/2b663374f2a3beef67e4fc09532fc190/jetified-firebase-installations-17.0.0/AndroidManifest.xml:6:5-8:41
 MERGED from [com.google.firebase:firebase-common:20.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/e8c12af64c0d197211b7d090cb61cdf8/jetified-firebase-common-20.0.0/AndroidManifest.xml:20:5-22:41
@@ -401,6 +416,8 @@ MERGED from [com.google.firebase:firebase-auth:21.0.1] /home/seshan/.gradle/cach
 MERGED from [com.google.firebase:firebase-auth:21.0.1] /home/seshan/.gradle/caches/transforms-2/files-2.1/cb85e813550ceb859d5d8655b705694f/jetified-firebase-auth-21.0.1/AndroidManifest.xml:23:5-67
 MERGED from [com.google.firebase:firebase-firestore:23.0.3] /home/seshan/.gradle/caches/transforms-2/files-2.1/e4186c293950d73169b2437483bf0308/jetified-firebase-firestore-23.0.3/AndroidManifest.xml:14:5-67
 MERGED from [com.google.firebase:firebase-firestore:23.0.3] /home/seshan/.gradle/caches/transforms-2/files-2.1/e4186c293950d73169b2437483bf0308/jetified-firebase-firestore-23.0.3/AndroidManifest.xml:14:5-67
+MERGED from [com.google.firebase:firebase-storage:20.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/aac17191751d9819c4ba4efa4c4713d8/jetified-firebase-storage-20.0.0/AndroidManifest.xml:27:5-67
+MERGED from [com.google.firebase:firebase-storage:20.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/aac17191751d9819c4ba4efa4c4713d8/jetified-firebase-storage-20.0.0/AndroidManifest.xml:27:5-67
 MERGED from [com.google.android.gms:play-services-measurement-api:19.0.1] /home/seshan/.gradle/caches/transforms-2/files-2.1/d3490d9d81ebe2d7174eb29e4a32f867/jetified-play-services-measurement-api-19.0.1/AndroidManifest.xml:22:5-67
 MERGED from [com.google.android.gms:play-services-measurement-api:19.0.1] /home/seshan/.gradle/caches/transforms-2/files-2.1/d3490d9d81ebe2d7174eb29e4a32f867/jetified-play-services-measurement-api-19.0.1/AndroidManifest.xml:22:5-67
 MERGED from [com.google.firebase:firebase-installations:17.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/2b663374f2a3beef67e4fc09532fc190/jetified-firebase-installations-17.0.0/AndroidManifest.xml:11:5-67
@@ -417,12 +434,16 @@ service#com.google.firebase.components.ComponentDiscoveryService
 ADDED from [:cloud_firestore] /home/seshan/Desktop/KKV/kkv/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-12:19
 MERGED from [:firebase_auth] /home/seshan/Desktop/KKV/kkv/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-12:19
 MERGED from [:firebase_auth] /home/seshan/Desktop/KKV/kkv/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-12:19
+MERGED from [:firebase_storage] /home/seshan/Desktop/KKV/kkv/build/firebase_storage/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-12:19
+MERGED from [:firebase_storage] /home/seshan/Desktop/KKV/kkv/build/firebase_storage/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-12:19
 MERGED from [:firebase_core] /home/seshan/Desktop/KKV/kkv/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-12:19
 MERGED from [:firebase_core] /home/seshan/Desktop/KKV/kkv/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-12:19
 MERGED from [com.google.firebase:firebase-auth:21.0.1] /home/seshan/.gradle/caches/transforms-2/files-2.1/cb85e813550ceb859d5d8655b705694f/jetified-firebase-auth-21.0.1/AndroidManifest.xml:74:9-80:19
 MERGED from [com.google.firebase:firebase-auth:21.0.1] /home/seshan/.gradle/caches/transforms-2/files-2.1/cb85e813550ceb859d5d8655b705694f/jetified-firebase-auth-21.0.1/AndroidManifest.xml:74:9-80:19
 MERGED from [com.google.firebase:firebase-firestore:23.0.3] /home/seshan/.gradle/caches/transforms-2/files-2.1/e4186c293950d73169b2437483bf0308/jetified-firebase-firestore-23.0.3/AndroidManifest.xml:17:9-23:19
 MERGED from [com.google.firebase:firebase-firestore:23.0.3] /home/seshan/.gradle/caches/transforms-2/files-2.1/e4186c293950d73169b2437483bf0308/jetified-firebase-firestore-23.0.3/AndroidManifest.xml:17:9-23:19
+MERGED from [com.google.firebase:firebase-storage:20.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/aac17191751d9819c4ba4efa4c4713d8/jetified-firebase-storage-20.0.0/AndroidManifest.xml:30:9-36:19
+MERGED from [com.google.firebase:firebase-storage:20.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/aac17191751d9819c4ba4efa4c4713d8/jetified-firebase-storage-20.0.0/AndroidManifest.xml:30:9-36:19
 MERGED from [com.google.android.gms:play-services-measurement-api:19.0.1] /home/seshan/.gradle/caches/transforms-2/files-2.1/d3490d9d81ebe2d7174eb29e4a32f867/jetified-play-services-measurement-api-19.0.1/AndroidManifest.xml:27:9-33:19
 MERGED from [com.google.android.gms:play-services-measurement-api:19.0.1] /home/seshan/.gradle/caches/transforms-2/files-2.1/d3490d9d81ebe2d7174eb29e4a32f867/jetified-play-services-measurement-api-19.0.1/AndroidManifest.xml:27:9-33:19
 MERGED from [com.google.firebase:firebase-installations:17.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/2b663374f2a3beef67e4fc09532fc190/jetified-firebase-installations-17.0.0/AndroidManifest.xml:15:9-21:19
@@ -449,6 +470,12 @@ ADDED from [:firebase_auth] /home/seshan/Desktop/KKV/kkv/build/firebase_auth/int
 		ADDED from [:firebase_auth] /home/seshan/Desktop/KKV/kkv/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
 	android:name
 		ADDED from [:firebase_auth] /home/seshan/Desktop/KKV/kkv/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-124
+meta-data#com.google.firebase.components:io.flutter.plugins.firebase.storage.FlutterFirebaseAppRegistrar
+ADDED from [:firebase_storage] /home/seshan/Desktop/KKV/kkv/build/firebase_storage/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
+	android:value
+		ADDED from [:firebase_storage] /home/seshan/Desktop/KKV/kkv/build/firebase_storage/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
+	android:name
+		ADDED from [:firebase_storage] /home/seshan/Desktop/KKV/kkv/build/firebase_storage/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-126
 meta-data#com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar
 ADDED from [:firebase_core] /home/seshan/Desktop/KKV/kkv/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
 	android:value
@@ -473,6 +500,8 @@ MERGED from [com.google.firebase:firebase-auth:21.0.1] /home/seshan/.gradle/cach
 MERGED from [com.google.firebase:firebase-auth:21.0.1] /home/seshan/.gradle/caches/transforms-2/files-2.1/cb85e813550ceb859d5d8655b705694f/jetified-firebase-auth-21.0.1/AndroidManifest.xml:24:5-79
 MERGED from [com.google.firebase:firebase-firestore:23.0.3] /home/seshan/.gradle/caches/transforms-2/files-2.1/e4186c293950d73169b2437483bf0308/jetified-firebase-firestore-23.0.3/AndroidManifest.xml:13:5-79
 MERGED from [com.google.firebase:firebase-firestore:23.0.3] /home/seshan/.gradle/caches/transforms-2/files-2.1/e4186c293950d73169b2437483bf0308/jetified-firebase-firestore-23.0.3/AndroidManifest.xml:13:5-79
+MERGED from [com.google.firebase:firebase-storage:20.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/aac17191751d9819c4ba4efa4c4713d8/jetified-firebase-storage-20.0.0/AndroidManifest.xml:26:5-79
+MERGED from [com.google.firebase:firebase-storage:20.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/aac17191751d9819c4ba4efa4c4713d8/jetified-firebase-storage-20.0.0/AndroidManifest.xml:26:5-79
 MERGED from [com.google.android.gms:play-services-measurement-api:19.0.1] /home/seshan/.gradle/caches/transforms-2/files-2.1/d3490d9d81ebe2d7174eb29e4a32f867/jetified-play-services-measurement-api-19.0.1/AndroidManifest.xml:23:5-79
 MERGED from [com.google.android.gms:play-services-measurement-api:19.0.1] /home/seshan/.gradle/caches/transforms-2/files-2.1/d3490d9d81ebe2d7174eb29e4a32f867/jetified-play-services-measurement-api-19.0.1/AndroidManifest.xml:23:5-79
 MERGED from [com.google.firebase:firebase-installations:17.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/2b663374f2a3beef67e4fc09532fc190/jetified-firebase-installations-17.0.0/AndroidManifest.xml:10:5-79
@@ -589,6 +618,12 @@ ADDED from [com.google.firebase:firebase-firestore:23.0.3] /home/seshan/.gradle/
 		ADDED from [com.google.firebase:firebase-firestore:23.0.3] /home/seshan/.gradle/caches/transforms-2/files-2.1/e4186c293950d73169b2437483bf0308/jetified-firebase-firestore-23.0.3/AndroidManifest.xml:22:17-82
 	android:name
 		ADDED from [com.google.firebase:firebase-firestore:23.0.3] /home/seshan/.gradle/caches/transforms-2/files-2.1/e4186c293950d73169b2437483bf0308/jetified-firebase-firestore-23.0.3/AndroidManifest.xml:21:17-111
+meta-data#com.google.firebase.components:com.google.firebase.storage.StorageRegistrar
+ADDED from [com.google.firebase:firebase-storage:20.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/aac17191751d9819c4ba4efa4c4713d8/jetified-firebase-storage-20.0.0/AndroidManifest.xml:33:13-35:85
+	android:value
+		ADDED from [com.google.firebase:firebase-storage:20.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/aac17191751d9819c4ba4efa4c4713d8/jetified-firebase-storage-20.0.0/AndroidManifest.xml:35:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-storage:20.0.0] /home/seshan/.gradle/caches/transforms-2/files-2.1/aac17191751d9819c4ba4efa4c4713d8/jetified-firebase-storage-20.0.0/AndroidManifest.xml:34:17-107
 uses-permission#android.permission.WAKE_LOCK
 ADDED from [com.google.android.gms:play-services-measurement-api:19.0.1] /home/seshan/.gradle/caches/transforms-2/files-2.1/d3490d9d81ebe2d7174eb29e4a32f867/jetified-play-services-measurement-api-19.0.1/AndroidManifest.xml:24:5-68
 MERGED from [com.google.android.gms:play-services-measurement:19.0.1] /home/seshan/.gradle/caches/transforms-2/files-2.1/df3f69fd7600987b904c6335e6ca0b86/jetified-play-services-measurement-19.0.1/AndroidManifest.xml:25:5-68

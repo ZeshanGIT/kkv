@@ -2,8 +2,12 @@ import 'package:after_layout/after_layout.dart';
 import 'package:clipboard/clipboard.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:kkv/common/constants.dart';
-import 'package:kkv/common/text_styles.dart';
+import 'package:metadata_fetch/metadata_fetch.dart';
+
+import '../../../../../../common/constants.dart';
+import '../../../../../../common/text_styles.dart';
+import '../../../../../../model/attachment_model.dart';
+import 'add_assignment_controller.dart';
 
 class LinkPicker extends StatefulWidget {
   const LinkPicker({Key? key}) : super(key: key);
@@ -68,10 +72,20 @@ class _LinkPickerState extends State<LinkPicker> with AfterLayoutMixin {
           Container(
             alignment: Alignment.center,
             child: OutlinedButton(
-              onPressed: () {
-                Get.back();
-                Get.back();
-              },
+              onPressed: isURL
+                  ? () async {
+                      final data = await MetadataFetch.extract(clipContent);
+
+                      Get.find<AddAssignmentController>()
+                          .addAttachment(AttachmentModel(
+                        title: data?.title ?? clipContent,
+                        type: "Link",
+                        url: clipContent,
+                      ));
+                      Get.back();
+                      Get.back();
+                    }
+                  : null,
               child: Text(
                 "Submit",
                 style: SUB_HEADING,

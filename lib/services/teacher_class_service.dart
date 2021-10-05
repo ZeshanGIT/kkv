@@ -55,11 +55,10 @@ class TeacherClassService {
   }
 
   static Future<List<ClassModel>> fetchClasses() async {
-    List<String> classes = ((await _teacher.doc(_box.getUid()).get())
-            .data()?[FirestoreCollections.CLASS] as List<dynamic>)
+    List<String> classes = (((await _teacher.doc(_box.getUid()).get())
+            .data()?[FirestoreCollections.CLASS]) as List<dynamic>)
         .map((id) => id.toString())
         .toList();
-
     List<ClassModel> classList = [];
 
     for (String docId in classes) {

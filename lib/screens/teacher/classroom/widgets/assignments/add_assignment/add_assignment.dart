@@ -6,6 +6,7 @@ import '../../../../../../common/text_styles.dart';
 import '../../../../../../common/widgets/bottom_width_button.dart';
 import '../../../../../../common/widgets/top_bar.dart';
 import 'add_assignment_controller.dart';
+import 'attachment_card.dart';
 
 class AddAssignment extends StatelessWidget {
   const AddAssignment({Key? key}) : super(key: key);
@@ -30,6 +31,7 @@ class AddAssignment extends StatelessWidget {
                   Divider(),
                   SIZED_BOX_8,
                   TextFormField(
+                    onChanged: controller.onTitleChanged,
                     decoration: InputDecoration(
                       hintText: "Title",
                       labelText: "Title",
@@ -38,6 +40,7 @@ class AddAssignment extends StatelessWidget {
                   ),
                   SIZED_BOX_16,
                   TextFormField(
+                    onChanged: controller.onDescChanged,
                     maxLines: 5,
                     minLines: 2,
                     decoration: InputDecoration(
@@ -50,9 +53,9 @@ class AddAssignment extends StatelessWidget {
                   ),
                   SIZED_BOX_16,
                   TextFormField(
-                    controller: controller.dueDateController,
                     onTap: controller.pickDueDate,
                     readOnly: true,
+                    controller: controller.dueDateController,
                     decoration: InputDecoration(
                       suffixIcon: Icon(Icons.calendar_today_rounded),
                       hintText: "Due date",
@@ -67,15 +70,22 @@ class AddAssignment extends StatelessWidget {
                   ),
                   SIZED_BOX_16,
                   TextButton.icon(
-                    onPressed: controller.addAttachments,
+                    onPressed: controller.openAttachmentBottomSheet,
                     icon: Icon(Icons.attach_file_rounded),
                     label: Text("Add attachments"),
                   ),
                   SIZED_BOX_16,
+                  ...controller.attachments
+                      .map((at) => AttachmentCard(at))
+                      .toList(),
+                  SIZED_BOX_16,
                 ],
               ).paddingAll(16),
             ),
-            BottomWidthBlackButton(text: "Submit").paddingAll(16),
+            BottomWidthBlackButton(
+              text: "Submit",
+              onPressed: controller.onSubmit,
+            ).paddingAll(16),
           ],
         ),
       ),
